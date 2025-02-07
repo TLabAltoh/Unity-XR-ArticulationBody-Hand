@@ -13,14 +13,14 @@ namespace TLab.XR.ArticulationBodyHand
 
         void Update()
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
             {
                 var xDrive = m_articulationBody.xDrive;
                 xDrive.target -= 200f * Time.deltaTime;
                 xDrive.target = Mathf.Clamp(xDrive.target, xDrive.lowerLimit, xDrive.upperLimit);
                 m_articulationBody.xDrive = xDrive;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.S))
             {
                 var xDrive = m_articulationBody.xDrive;
                 xDrive.target += 200f * Time.deltaTime;

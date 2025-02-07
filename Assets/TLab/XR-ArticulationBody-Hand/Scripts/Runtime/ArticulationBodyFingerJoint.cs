@@ -1,10 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TLab.XR.ArticulationBodyHand
 {
-    [RequireComponent(typeof(ConfigurableJoint))]
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(ArticulationBody))]
     public class ArticulationBodyFingerJoint : MonoBehaviour
     {
         [SerializeField]
@@ -26,7 +26,7 @@ namespace TLab.XR.ArticulationBodyHand
 
         [SerializeField] private Collider m_collider;
 
-        [SerializeField] private List<Collider> m_colliders = new List<Collider>();
+        [SerializeField] private List<Collider> m_childColliders = new List<Collider>();
 
         [SerializeField]
         private List<Collider> m_ignoring = new List<Collider>();
@@ -34,16 +34,13 @@ namespace TLab.XR.ArticulationBodyHand
         [Header("Parent Joints")]
 
         [SerializeField]
-        private List<ArticulationBodyFingerJoint> m_parentJoints = new List<ArticulationBodyFingerJoint>();
+        private List<ArticulationBodyFingerJoint> m_parentArticulations = new List<ArticulationBodyFingerJoint>();
 
         [SerializeField]
         private Transform m_parent;
 
         [SerializeField]
-        private Rigidbody m_rigidbody;
-
-        [SerializeField]
-        private ConfigurableJoint m_joint;
+        private ArticulationBody m_articulation;
 
         private float m_positionError = 0f;
 
@@ -53,24 +50,11 @@ namespace TLab.XR.ArticulationBodyHand
 
         private Transform m_goal;
 
-        // Property
+        public List<Collider> colliders => m_childColliders;
 
-        public ConfigurableJoint joint => m_joint;
-
-        public Rigidbody rb => m_rigidbody;
-
-        public List<Collider> colliders => m_colliders;
-
-        private void InitJoint()
+        private void InitArticulation()
         {
-            m_joint.autoConfigureConnectedAnchor = false;
-            m_joint.configuredInWorldSpace = false;
-
-            if (m_parent != null)
-                m_joint.connectedBody = m_parent.GetComponent<Rigidbody>();
-
-            m_joint.anchor = Vector3.zero;
-            m_joint.connectedAnchor = this.transform.localPosition;
+            m_articulation.useGravity = false;
         }
 
         public void SetMaster(Transform master, bool root)
@@ -85,11 +69,11 @@ namespace TLab.XR.ArticulationBodyHand
             if (m_anchor != null)
                 return;
 
-            var anchor = new GameObject(this.gameObject.name + ".anchor").transform;
+            var anchor = new GameObject(name + ".anchor").transform;
 
-            anchor.position = this.transform.position;
-            anchor.rotation = this.transform.rotation;
-            anchor.parent = this.transform;
+            anchor.position = transform.position;
+            anchor.rotation = transform.rotation;
+            anchor.parent = transform;
 
             m_anchor = anchor;
         }
@@ -99,37 +83,28 @@ namespace TLab.XR.ArticulationBodyHand
             if (m_goal != null)
                 return;
 
-            var goal = new GameObject(this.gameObject.name + ".goal").transform;
+            var goal = new GameObject(name + ".goal").transform;
 
-            goal.position = this.transform.position;
-            goal.rotation = this.transform.rotation;
-            goal.parent = this.transform.parent;
+            goal.position = transform.position;
+            goal.rotation = transform.rotation;
+            goal.parent = transform.parent;
 
             m_goal = goal;
         }
 
-        private Quaternion GetJointAxisWorldRotation()
+        private Quaternion GetArticulationAxisWorldRotation()
         {
-            var xAxis = m_joint.axis;
-            var zAxis = Vector3.Cross(m_joint.axis, m_joint.secondaryAxis);
-            var yAxis = Vector3.Cross(zAxis, xAxis);
-
-            var axisRot = Quaternion.LookRotation(zAxis, yAxis);
-
-            if (m_joint.configuredInWorldSpace)
-                return axisRot;
-            else
-                return m_joint.transform.rotation * axisRot;
+            return transform.rotation * m_articulation.anchorRotation;
         }
 
-        private void IgnoreCollisions(Collider collider, bool ignore)
+        private void IgnoreCollisions(Collider col, bool ignore)
         {
-            if (ignore && !m_ignoring.Contains(collider))
-                m_ignoring.Add(collider);
-            else if (!ignore && m_ignoring.Contains(collider))
-                m_ignoring.Remove(collider);
+            if (ignore && !m_ignoring.Contains(col))
+                m_ignoring.Add(col);
+            else if (!ignore && m_ignoring.Contains(col))
+                m_ignoring.Remove(col);
 
-            m_colliders.ForEach((c) => Physics.IgnoreCollision(c, collider, ignore));
+            m_childColliders.ForEach((c) => Physics.IgnoreCollision(c, col, ignore));
         }
 
         private void IgnoreCollisions()
@@ -142,32 +117,27 @@ namespace TLab.XR.ArticulationBodyHand
 
         private void GetCollisions()
         {
-            m_collider = m_rigidbody.GetComponent<Collider>();
-
-            m_colliders.Clear();
-
-            var colliders = m_rigidbody.GetComponentsInChildren<Collider>();
-            foreach (var collider in colliders)
-                m_colliders.Add(collider);
+            m_collider = GetComponent<Collider>();
+            m_childColliders = GetComponentsInChildren<Collider>().ToList();
         }
 
         private void GetParentJoints()
         {
-            m_parentJoints.Clear();
+            m_parentArticulations.Clear();
 
             m_parent = this.transform.parent;
 
             var parent = m_parent;
 
-            var joint = parent.GetComponent<ArticulationBodyFingerJoint>();
-            while (joint != null)
+            var fingerJoint = parent.GetComponent<ArticulationBodyFingerJoint>();
+            while (fingerJoint != null)
             {
-                m_parentJoints.Add(joint);
+                m_parentArticulations.Add(fingerJoint);
 
                 if (parent.parent != null)
                 {
                     parent = parent.parent;
-                    joint = parent.GetComponent<ArticulationBodyFingerJoint>();
+                    fingerJoint = parent.GetComponent<ArticulationBodyFingerJoint>();
                 }
             }
         }
@@ -183,49 +153,54 @@ namespace TLab.XR.ArticulationBodyHand
 
             GetCollisions();
 
-            InitJoint();
+            InitArticulation();
         }
 
         public void BoneAwake()
         {
-            m_rigidbody = Utility.RequireComponent<Rigidbody>(this.gameObject);
-
-            m_joint = Utility.RequireComponent<ConfigurableJoint>(this.gameObject);
+            m_articulation = Utility.RequireComponent<ArticulationBody>(gameObject);
         }
 
         void FixedUpdate()
         {
             m_goal.rotation = m_goal.parent.rotation * m_master.localRotation;
 
-            if (m_root)
-                m_joint.connectedAnchor = m_master.position;
-            else
-                m_joint.targetPosition = -m_master.position;
+            //if (m_root)
+            //    m_articulation.connectedAnchor = m_master.position;
+            //else
+            //    m_articulation.targetPosition = -m_master.position;
 
-            var jointFrameRotation = GetJointAxisWorldRotation();
+            var articulationAxisWorldRotation = GetArticulationAxisWorldRotation();
 
-            var targetRotation = Quaternion.Inverse(jointFrameRotation);
+            var targetRotation = Quaternion.Inverse(articulationAxisWorldRotation);
             targetRotation *= m_anchor.rotation;
             targetRotation *= Quaternion.Inverse(m_goal.rotation);
-            targetRotation *= jointFrameRotation;
+            targetRotation *= articulationAxisWorldRotation;
+            var targetEuler = targetRotation.eulerAngles;
 
-            m_joint.targetRotation = targetRotation;
+            var xDrive = m_articulation.xDrive;
+            xDrive.target = targetEuler.x;
+            m_articulation.xDrive = xDrive;
 
-            // Error
-            m_positionError = Vector3.Distance(m_joint.transform.position, m_master.position);
+            var yDrive = m_articulation.yDrive;
+            yDrive.target = targetEuler.y;
+            m_articulation.yDrive = yDrive;
 
+            var zDrive = m_articulation.zDrive;
+            zDrive.target = targetEuler.z;
+            m_articulation.zDrive = zDrive;
+
+            m_positionError = Vector3.Distance(m_articulation.transform.position, m_master.position);
             if (m_positionError < 0.00001f)
                 m_positionError = 0.0f;
-
-            // Stability
             if (m_positionError > 0.5f)
             {
 
             }
 
-            m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, m_maxLinearVelocity);
-            m_rigidbody.angularVelocity = Vector3.ClampMagnitude(m_rigidbody.angularVelocity, m_maxAngularVelocity);
-            m_rigidbody.maxDepenetrationVelocity = m_maxDepenetrationVelocity;
+            m_articulation.velocity = Vector3.ClampMagnitude(m_articulation.velocity, m_maxLinearVelocity);
+            m_articulation.angularVelocity = Vector3.ClampMagnitude(m_articulation.angularVelocity, m_maxAngularVelocity);
+            m_articulation.maxDepenetrationVelocity = m_maxDepenetrationVelocity;
         }
 
         void Start()
@@ -236,9 +211,12 @@ namespace TLab.XR.ArticulationBodyHand
 
         void OnDrawGizmos()
         {
+            if (m_articulation == null)
+                return;
+
             const float GIZMO_RADIUS = 0.005f;
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(m_rigidbody.worldCenterOfMass, GIZMO_RADIUS);
+            Gizmos.DrawSphere(m_articulation.worldCenterOfMass, GIZMO_RADIUS);
         }
     }
 }
