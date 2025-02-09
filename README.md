@@ -19,8 +19,8 @@ Previously, I used ```ConfiguredJoint``` to implement physical hand but it's not
 - Physics
 	- Bounce Threshold: 0.25
 	- Default Max Depenetration Velocity: 0.1
-	- Default Solver Iterations: 25
-	- Default Solver Velocity Iterations: 15
+	- Default Solver Iterations: 16
+	- Default Solver Velocity Iterations: 32
 
 	- Queries Hit Backfaces: true
 	- Queries Hit Triggers: true
@@ -38,4 +38,4 @@ Previously, I used ```ConfiguredJoint``` to implement physical hand but it's not
 	- Maximum Allowed Timestep: 0.1
 
 ### Sample Scene
-- Assets/Scenes/SampleScene.unity
+- Assets/TLab/XR-ArticulationBody-Hand/Scenes/SampleScene.unity
