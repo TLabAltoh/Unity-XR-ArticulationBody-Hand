@@ -27,11 +27,10 @@ namespace TLab.XR.ArticulationBodyHand
         private HandVisual m_handVisual;
 
         [System.Serializable]
-        public class SerializableDrive
+        public class SerializableArticulationDrive
         {
             public float stiffness = 1e+5f;
-            public float damping = 100;
-            public float forceLimit = 100;
+            public float damping = 500;
             public ArticulationDriveType driveType = ArticulationDriveType.Force;
 
             public ArticulationDrive ToArticulationDrive()
@@ -39,21 +38,29 @@ namespace TLab.XR.ArticulationBodyHand
                 var drive = new ArticulationDrive();
                 drive.stiffness = stiffness;
                 drive.damping = damping;
-                drive.forceLimit = forceLimit;
                 drive.driveType = driveType;
                 return drive;
             }
+
+            public SerializableArticulationDrive(float stiffness, float damping, ArticulationDriveType driveType)
+            {
+                this.stiffness = stiffness;
+                this.damping = damping;
+                this.driveType = driveType;
+            }
+
+            public SerializableArticulationDrive() { }
         }
 
         [System.Serializable]
-        public class FingerDrive
+        public class SerializableFingerArticulationDrive
         {
-            public SerializableDrive thumb = new SerializableDrive();
-            public SerializableDrive others = new SerializableDrive();
+            public SerializableArticulationDrive thumb = new SerializableArticulationDrive();
+            public SerializableArticulationDrive others = new SerializableArticulationDrive();
         }
 
         [SerializeField]
-        private FingerDrive m_fingerDrive;
+        private SerializableFingerArticulationDrive m_fingerDrive;
 
         [SerializeField]
         private MasterAndServant m_wristRoot;
@@ -61,13 +68,13 @@ namespace TLab.XR.ArticulationBodyHand
         [SerializeField]
         private List<MasterAndServant> m_fingers;
 
-        public Object hand => m_hand;
-
-        public FingerDrive fingerDrive => m_fingerDrive;
+        public Hand hand => (Hand)m_hand;
 
         public HandVisual handVisual => m_handVisual;
 
         public MasterAndServant wristRoot => m_wristRoot;
+
+        public SerializableFingerArticulationDrive fingerDrive => m_fingerDrive;
 
         private bool m_started = false;
 

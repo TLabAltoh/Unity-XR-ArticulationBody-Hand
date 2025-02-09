@@ -16,30 +16,23 @@ namespace TLab.XR.ArticulationBodyHand
         [SerializeField]
         private float m_maxAngularVelocity = 2.0f;
 
-        [SerializeField]
-        private float m_maxDepenetrationVelocity = 1.0f;
-
-        [SerializeField]
+        [HideInInspector, SerializeField]
         private List<SlaveJoint> m_parentJoints = new List<SlaveJoint>();
 
-        [SerializeField]
+        [HideInInspector, SerializeField]
         private Transform m_parent;
 
-        [SerializeField]
-        private Transform m_root;
-
-        [SerializeField]
+        [HideInInspector, SerializeField]
         private ArticulationBody m_articulation;
 
-        [SerializeField]
+        [HideInInspector, SerializeField]
+        private Quaternion m_baseRotation;
+
+        [HideInInspector, SerializeField]
         private Collider m_collider;
 
-        [SerializeField]
+        [HideInInspector, SerializeField]
         private List<Collider> m_ignoring = new List<Collider>();
-
-        private float m_positionError = 0f;
-
-        private float m_rotationError = 0f;
 
         public void SetMaster(Transform master)
         {
@@ -76,15 +69,12 @@ namespace TLab.XR.ArticulationBodyHand
             {
                 m_parentJoints.Add(fingerJoint);
 
-                if (fingerJoint.m_articulation.isRoot)
-                    m_root = fingerJoint.m_master;
-
                 parent = parent.parent;
                 fingerJoint = parent.GetComponent<SlaveJoint>();
             }
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             if (m_articulation.isRoot)
             {
@@ -94,19 +84,12 @@ namespace TLab.XR.ArticulationBodyHand
                 m_articulation.angularVelocity = angle * Mathf.Deg2Rad * axis / Time.fixedDeltaTime;
             }
             else
-                m_articulation.SetDriveRotation(m_master.localRotation);
+                m_articulation.SetDriveRotation(Quaternion.Inverse(m_baseRotation) * m_master.localRotation, float.MaxValue);
 
-            m_positionError = Vector3.Distance(m_articulation.transform.position, m_master.position);
-            if (m_positionError < 0.00001f)
-                m_positionError = 0.0f;
-            if (m_positionError > 0.5f)
-            {
-
-            }
-
+            // articulation.max**Velocity doesn't seem to work when the velocity is set manually. So I limit the velocity manually.
+            // This was necessary to avoid breaking the articulation by penetrating the collider.
             m_articulation.velocity = Vector3.ClampMagnitude(m_articulation.velocity, m_maxLinearVelocity);
             m_articulation.angularVelocity = Vector3.ClampMagnitude(m_articulation.angularVelocity, m_maxAngularVelocity);
-            m_articulation.maxDepenetrationVelocity = m_maxDepenetrationVelocity;
         }
 
 #if UNITY_EDITOR
@@ -120,52 +103,76 @@ namespace TLab.XR.ArticulationBodyHand
         public enum HandJointType
         {
             None,
-            Finger,
+            FirstFinger,
+            OtherFinger,
             WristRoot,
         };
 
-        public void InitArticulation(HandJointType type, ArticulationDrive drive)
+        public void InitArticulation(HandJointType type, ArticulationDrive drive, bool isRightHand)
         {
             var articulation = gameObject.RequireComponent<ArticulationBody>();
 
             articulation.useGravity = false;
 
-            articulation.SnapAnchorToClosestContact();
+            articulation.anchorPosition = Vector3.zero;
+            articulation.anchorRotation = isRightHand ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 270, 180);
 
             articulation.linearDamping = 0;
             articulation.jointFriction = 0;
-            articulation.angularDamping = 0;
+            articulation.angularDamping = 1;
 
             articulation.matchAnchors = true;
 
             articulation.automaticCenterOfMass = true;
             articulation.automaticInertiaTensor = true;
 
+            articulation.maxLinearVelocity = m_maxLinearVelocity;
+            articulation.maxAngularVelocity = m_maxAngularVelocity;
+            articulation.maxDepenetrationVelocity = 3f;
+
+            articulation.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
             switch (type)
             {
                 case HandJointType.None:
                     break;
-                case HandJointType.Finger:
+                case HandJointType.FirstFinger:
                     {
+                        // SphericalJoint's limmitation stiffness seems to be less rigid than RevoluteJoint. So I multiply the power here.
+                        drive.stiffness *= 5;
+
                         articulation.jointType = ArticulationJointType.SphericalJoint;
 
-                        drive.lowerLimit = articulation.xDrive.lowerLimit;
-                        drive.upperLimit = articulation.xDrive.upperLimit;
-                        drive.target = articulation.xDrive.target;
-                        drive.targetVelocity = articulation.xDrive.targetVelocity;
+                        articulation.swingYLock = ArticulationDofLock.LimitedMotion;
+                        articulation.swingZLock = ArticulationDofLock.LockedMotion;
+                        articulation.twistLock = ArticulationDofLock.LimitedMotion;
+
+                        drive.lowerLimit = -10;
+                        drive.upperLimit = +90;
+                        drive.forceLimit = float.MaxValue;
+                        drive.target = 0;
+                        drive.targetVelocity = 0;
                         articulation.xDrive = drive;
 
-                        drive.lowerLimit = articulation.yDrive.lowerLimit;
-                        drive.upperLimit = articulation.yDrive.upperLimit;
-                        drive.target = articulation.yDrive.target;
-                        drive.targetVelocity = articulation.yDrive.targetVelocity;
+                        drive.lowerLimit = -5;
+                        drive.upperLimit = +5;
+                        drive.forceLimit = float.MaxValue;
+                        drive.target = 0;
+                        drive.targetVelocity = 0;
                         articulation.yDrive = drive;
+                    }
+                    break;
+                case HandJointType.OtherFinger:
+                    {
+                        articulation.jointType = ArticulationJointType.RevoluteJoint;
+                        articulation.twistLock = ArticulationDofLock.LimitedMotion;
 
-                        drive.lowerLimit = articulation.zDrive.lowerLimit;
-                        drive.upperLimit = articulation.zDrive.upperLimit;
-                        drive.target = articulation.zDrive.target;
-                        drive.targetVelocity = articulation.zDrive.targetVelocity;
-                        articulation.zDrive = drive;
+                        drive.lowerLimit = -10;
+                        drive.upperLimit = +90;
+                        drive.forceLimit = float.MaxValue;
+                        drive.target = 0;
+                        drive.targetVelocity = 0;
+                        articulation.xDrive = drive;
                     }
                     break;
                 case HandJointType.WristRoot:
@@ -173,6 +180,8 @@ namespace TLab.XR.ArticulationBodyHand
             }
 
             m_articulation = articulation;
+
+            m_baseRotation = transform.localRotation;
         }
 
         void OnDrawGizmos()

@@ -203,13 +203,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7553764191543912889}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 1774079291687715982}
   m_articulation: {fileID: 6737417260018713161}
+  m_baseRotation: {x: 0.26023024, y: -0.024330912, z: -0.12567802, w: 0.95702314}
   m_collider: {fileID: 6557938639308991518}
   m_ignoring:
   - {fileID: 9061591096531021279}
@@ -233,7 +234,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.032512907
   m_Direction: 0
   m_Center: {x: -0.016256453, y: 0, z: 0}
@@ -248,47 +249,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.024852559, y: 0, z: 4.656613e-10}
-  m_ParentAnchorRotation: {x: 0.2602302, y: -0.024330895, z: -0.12567803, w: 0.9570232}
+  m_ParentAnchorRotation: {x: 0.6939221, y: 0.09514273, z: -0.65951306, w: -0.27287832}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -352,12 +353,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
   m_articulation: {fileID: 4596879972577754103}
+  m_baseRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
   m_collider: {fileID: 4321403091969116161}
   m_ignoring:
   - {fileID: 2499670547108809217}
@@ -382,10 +384,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.04565055
   m_Direction: 0
-  m_Center: {x: -0.022825275, y: 0, z: 0}
+  m_Center: {x: 0.022825275, y: 0, z: 0}
 --- !u!171741748 &4596879972577754103
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -397,47 +399,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.034073558, y: -0.009419835, z: -0.022998573}
-  m_ParentAnchorRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
+  m_ParentAnchorRotation: {x: -0.13344815, y: 0.7837462, z: -0.15934494, w: 0.5852714}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
     lowerLimit: 0
     upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -501,12 +503,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
   m_articulation: {fileID: 7443170316155853120}
+  m_baseRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
   m_collider: {fileID: 6501357678148664378}
   m_ignoring:
   - {fileID: 6218594237467191624}
@@ -530,7 +533,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.0389961
   m_Direction: 0
   m_Center: {x: -0.01949805, y: 0, z: 0}
@@ -545,47 +548,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.08869379, y: 0.006529307, z: 0.017465241}
-  m_ParentAnchorRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
+  m_ParentAnchorRotation: {x: 0.6127878, y: -0.07281283, z: -0.78688234, w: 0.0023659244}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -649,13 +652,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 4079284056487749789}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 289574919833325739}
   m_articulation: {fileID: 3999542635234779650}
+  m_baseRotation: {x: -0.02585241, y: 0.0071160593, z: -0.0032929424, w: 0.99963504}
   m_collider: {fileID: 4638589650352643429}
   m_ignoring:
   - {fileID: 3960649392639676353}
@@ -678,10 +682,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.024303649
   m_Direction: 0
-  m_Center: {x: -0.012151824, y: 0, z: 0}
+  m_Center: {x: 0.012151824, y: 0, z: 0}
 --- !u!171741748 &3999542635234779650
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -693,47 +697,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.037927303, y: 4.947651e-10, z: 5.966285e-10}
-  m_ParentAnchorRotation: {x: -0.025852412, y: 0.00711606, z: -0.0032929408, w: 0.9996351}
-  m_AnchorPosition: {x: 0.0000000037130063, y: 4.863825e-10, z: 6.7495354e-10}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorRotation: {x: -0.015951954, y: 0.71188056, z: -0.020608876, w: 0.7018169}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -797,14 +801,12 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 0
-      damping: 100
-      forceLimit: 3.4028235e+38
+      stiffness: 100000
+      damping: 10000
       driveType: 0
     others:
-      stiffness: 0
-      damping: 100
-      forceLimit: 3.4028235e+38
+      stiffness: 100000
+      damping: 10000
       driveType: 0
   m_wristRoot:
     m_master: {fileID: 0}
@@ -893,14 +895,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7433389324193056591}
   - {fileID: 1823607433949876686}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 2060784944251083728}
   m_articulation: {fileID: 1681960766309263034}
+  m_baseRotation: {x: -0.016056, y: 0.027148725, z: 0.07203398, w: 0.99690336}
   m_collider: {fileID: 3864444328372053602}
   m_ignoring: []
 --- !u!136 &3864444328372053602
@@ -922,7 +925,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.019899985
   m_Direction: 0
   m_Center: {x: -0.009949992, y: 0, z: 0}
@@ -937,47 +940,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.024303658, y: -0.0000000014333636, z: -0.0000000015770638}
-  m_ParentAnchorRotation: {x: -0.016055997, y: 0.02714873, z: 0.07203397, w: 0.9969035}
+  m_ParentAnchorRotation: {x: 0.68572015, y: 0.03958237, z: -0.72411424, w: 0.062289044}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1044,11 +1047,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints: []
   m_parent: {fileID: 8618204616760674993}
-  m_articulation: {fileID: 0}
+  m_articulation: {fileID: 843236277747467028}
+  m_baseRotation: {x: 0, y: 0, z: 0, w: 1}
   m_collider: {fileID: 0}
   m_ignoring:
   - {fileID: 1830572300641330705}
@@ -1077,11 +1081,11 @@ ArticulationBody:
   m_GameObject: {fileID: 977054122404839886}
   m_Enabled: 1
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 20
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 2
   m_LinearX: 2
@@ -1117,9 +1121,9 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1183,14 +1187,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7580051153680021255}
   - {fileID: 3455068672581190300}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 468336682674233538}
   m_articulation: {fileID: 4143585868705808076}
+  m_baseRotation: {x: -0.034319542, y: 0.004611837, z: 0.09300701, w: 0.9950631}
   m_collider: {fileID: 1731695846139529813}
   m_ignoring: []
 --- !u!136 &1731695846139529813
@@ -1212,7 +1217,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.021999981
   m_Direction: 0
   m_Center: {x: -0.010999991, y: 0, z: 0}
@@ -1227,47 +1232,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.027549593, y: -0.0000000015234036, z: -0.0000000011593784}
-  m_ParentAnchorRotation: {x: -0.034319546, y: 0.004611835, z: 0.09300702, w: 0.9950632}
+  m_ParentAnchorRotation: {x: 0.7003548, y: 0.04149828, z: -0.706877, w: 0.09003351}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1386,14 +1391,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7370805459657717025}
   - {fileID: 6604817682116920526}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 5195671102573511580}
   m_articulation: {fileID: 2994641899455975614}
+  m_baseRotation: {x: -0.03761665, y: 0.042937692, z: 0.013286047, w: 0.99828094}
   m_collider: {fileID: 3824779974143193766}
   m_ignoring:
   - {fileID: 6544788229255270823}
@@ -1416,7 +1422,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.020311393
   m_Direction: 0
   m_Center: {x: -0.010155696, y: 0, z: 0}
@@ -1431,47 +1437,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.030720403, y: 0.000000002059096, z: 0.0000000023283064}
-  m_ParentAnchorRotation: {x: -0.037616666, y: 0.042937696, z: 0.013286045, w: 0.99828106}
+  m_ParentAnchorRotation: {x: 0.6755298, y: -0.017204378, z: -0.73625284, w: 0.035993684}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1535,12 +1541,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
   m_articulation: {fileID: 8021818354649794094}
+  m_baseRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
   m_collider: {fileID: 705063044804395219}
   m_ignoring:
   - {fileID: 7522857683751686335}
@@ -1564,10 +1571,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.0389961
   m_Direction: 0
-  m_Center: {x: -0.01949805, y: 0, z: 0}
+  m_Center: {x: 0.01949805, y: 0, z: 0}
 --- !u!171741748 &8021818354649794094
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1579,47 +1586,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.08869379, y: -0.006529307, z: -0.017465241}
-  m_ParentAnchorRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
+  m_ParentAnchorRotation: {x: -0.002365891, y: 0.78688234, z: -0.07281281, w: 0.6127878}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1716,13 +1723,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6604817682116920526}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 7725062641258691438}
   m_articulation: {fileID: 8293342648542785602}
+  m_baseRotation: {x: 0.09111303, y: -0.0040713567, z: -0.02812922, w: 0.9954349}
   m_collider: {fileID: 8553948779823751857}
   m_ignoring:
   - {fileID: 3824779974143193766}
@@ -1746,7 +1754,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.0307204
   m_Direction: 0
   m_Center: {x: -0.0153602, y: 0, z: 0}
@@ -1761,47 +1769,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.04565055, y: 0.0000009983778, z: -0.000002195011}
-  m_ParentAnchorRotation: {x: 0.09111304, y: -0.0040713577, z: -0.028129218, w: 0.9954349}
+  m_ParentAnchorRotation: {x: 0.70675766, y: 0.044536255, z: -0.70099986, w: -0.08431698}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1896,14 +1904,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5837474237313359707}
   - {fileID: 735044825105476822}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 1486218171843020050}
   m_articulation: {fileID: 4861079523966506276}
+  m_baseRotation: {x: -0.0034774565, y: -0.029179456, z: 0.025028542, w: 0.99925476}
   m_collider: {fileID: 7840859697774700410}
   m_ignoring: []
 --- !u!136 &7840859697774700410
@@ -1925,10 +1934,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.021499986
   m_Direction: 0
-  m_Center: {x: -0.010749993, y: 0, z: 0}
+  m_Center: {x: 0.010749993, y: 0, z: 0}
 --- !u!171741748 &4861079523966506276
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1939,48 +1948,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.026573401, y: 0.0000000017671482, z: 0.0000000025138434}
-  m_ParentAnchorRotation: {x: -0.0034774542, y: -0.029179461, z: 0.025028545, w: 0.9992549}
-  m_AnchorPosition: {x: 0.000000003895709, y: 6.3449335e-10, z: 0.0000000021763833}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.026573401, y: 8.412826e-10, z: 0.00000000239379}
+  m_ParentAnchorRotation: {x: -0.020156786, y: 0.6859469, z: 0.015238922, w: 0.72721285}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2044,8 +2053,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6561881721632686009}
   - {fileID: 338433835512914978}
@@ -2053,6 +2062,7 @@ MonoBehaviour:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8483544835501732105}
   m_articulation: {fileID: 7424469145010178043}
+  m_baseRotation: {x: 0.08350578, y: -0.065015696, z: 0.058274068, w: 0.9926751}
   m_collider: {fileID: 431481836123886159}
   m_ignoring: []
 --- !u!136 &431481836123886159
@@ -2074,7 +2084,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.024199998
   m_Direction: 0
   m_Center: {x: -0.012099999, y: 0, z: 0}
@@ -2089,47 +2099,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.0337931, y: -0.0000000015133992, z: 0.0000000013969839}
-  m_ParentAnchorRotation: {x: 0.083505765, y: -0.065015726, z: 0.058274075, w: 0.9926752}
+  m_ParentAnchorRotation: {x: 0.7479004, y: 0.10025345, z: -0.6559543, w: -0.01784147}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2248,13 +2258,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 3455068672581190300}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 1719684649603329394}
   m_articulation: {fileID: 281167097853113612}
+  m_baseRotation: {x: -0.011228237, y: 0.00437888, z: 0.0019782642, w: 0.99992543}
   m_collider: {fileID: 8253305868413930582}
   m_ignoring:
   - {fileID: 1731695846139529813}
@@ -2277,7 +2288,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02754959
   m_Direction: 0
   m_Center: {x: -0.013774795, y: 0, z: 0}
@@ -2292,47 +2303,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.04292699, y: -4.3655746e-11, z: -4.0017767e-10}
-  m_ParentAnchorRotation: {x: -0.011228238, y: 0.004378888, z: 0.0019782637, w: 0.99992543}
+  m_ParentAnchorRotation: {x: 0.7039577, y: -0.00654075, z: -0.71015036, w: 0.009338438}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2458,12 +2469,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
   m_articulation: {fileID: 2448094586303991493}
+  m_baseRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
   m_collider: {fileID: 2271447256011070436}
   m_ignoring:
   - {fileID: 6557938639308991518}
@@ -2488,7 +2500,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02485256
   m_Direction: 0
   m_Center: {x: -0.01242628, y: 0, z: 0}
@@ -2503,47 +2515,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.020069301, y: 0.011554099, z: -0.0104965195}
-  m_ParentAnchorRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
+  m_ParentAnchorRotation: {x: 0.8827864, y: 0.27093908, z: -0.28233385, w: -0.25993812}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2607,12 +2619,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
   m_articulation: {fileID: 1649435355752550742}
+  m_baseRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
   m_collider: {fileID: 1616148394736882380}
   m_ignoring:
   - {fileID: 3962126487436755352}
@@ -2636,7 +2649,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.037927303
   m_Direction: 0
   m_Center: {x: -0.018963652, y: 0, z: 0}
@@ -2651,47 +2664,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.09599624, y: 0.0073164543, z: -0.02355068}
-  m_ParentAnchorRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
+  m_ParentAnchorRotation: {x: 0.6926521, y: -0.00890841, z: -0.7193179, w: -0.05230079}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2755,13 +2768,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1823607433949876686}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 2017086322083567282}
   m_articulation: {fileID: 5218945945214448479}
+  m_baseRotation: {x: -0.025852412, y: 0.0071160584, z: -0.0032929415, w: 0.99963504}
   m_collider: {fileID: 3962126487436755352}
   m_ignoring:
   - {fileID: 3864444328372053602}
@@ -2784,7 +2798,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.024303649
   m_Direction: 0
   m_Center: {x: -0.012151824, y: 0, z: 0}
@@ -2799,47 +2813,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.037927303, y: -4.947651e-10, z: -5.966285e-10}
-  m_ParentAnchorRotation: {x: -0.025852414, y: 0.00711606, z: -0.0032929408, w: 0.9996351}
+  m_ParentAnchorRotation: {x: 0.7018169, y: -0.020608908, z: -0.71188056, w: 0.015951987}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2903,14 +2917,12 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 0
-      damping: 100
-      forceLimit: 3.4028235e+38
+      stiffness: 100000
+      damping: 10000
       driveType: 0
     others:
-      stiffness: 0
-      damping: 100
-      forceLimit: 3.4028235e+38
+      stiffness: 100000
+      damping: 10000
       driveType: 0
   m_wristRoot:
     m_master: {fileID: 0}
@@ -2999,8 +3011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 367995579719139305}
   - {fileID: 7370805459657717025}
@@ -3008,6 +3020,7 @@ MonoBehaviour:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 9214166410039594932}
   m_articulation: {fileID: 4301130132606859077}
+  m_baseRotation: {x: 0.00064476096, y: -0.04917067, z: 0.024018826, w: 0.99850136}
   m_collider: {fileID: 6544788229255270823}
   m_ignoring: []
 --- !u!136 &6544788229255270823
@@ -3029,7 +3042,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.020599999
   m_Direction: 0
   m_Center: {x: -0.010299999, y: 0, z: 0}
@@ -3044,47 +3057,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.020311382, y: 0.000000001717126, z: -0.0000000034087861}
-  m_ParentAnchorRotation: {x: 0.00064476626, y: -0.04917067, z: 0.024018826, w: 0.99850136}
+  m_ParentAnchorRotation: {x: 0.740816, y: 0.01743976, z: -0.6712781, w: 0.016527984}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3148,14 +3161,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1679085717629603440}
   - {fileID: 5800653354168258396}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 2716302260022212835}
   m_articulation: {fileID: 2915689185440099850}
+  m_baseRotation: {x: -0.0034774544, y: -0.029179465, z: 0.02502854, w: 0.99925476}
   m_collider: {fileID: 2840598871635889053}
   m_ignoring: []
 --- !u!136 &2840598871635889053
@@ -3177,7 +3191,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.021999985
   m_Direction: 0
   m_Center: {x: -0.0109999925, y: 0, z: 0}
@@ -3192,47 +3206,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.026573401, y: -0.0000000011323209, z: -0.0000000029758667}
-  m_ParentAnchorRotation: {x: -0.0034774537, y: -0.029179463, z: 0.025028542, w: 0.9992549}
+  m_ParentAnchorRotation: {x: 0.72721285, y: 0.0152388895, z: -0.6859469, w: 0.020156814}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3450,12 +3464,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
   m_articulation: {fileID: 8147820170437011504}
+  m_baseRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
   m_collider: {fileID: 5839739224593911793}
   m_ignoring:
   - {fileID: 8253305868413930582}
@@ -3479,7 +3494,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.042926993
   m_Direction: 0
   m_Center: {x: -0.021463497, y: 0, z: 0}
@@ -3494,47 +3509,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.095646605, y: 0.0025431546, z: -0.0017259055}
-  m_ParentAnchorRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
+  m_ParentAnchorRotation: {x: 0.668797, y: -0.0430643, z: -0.74158037, w: -0.030242518}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3598,8 +3613,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5940520415921231642}
   - {fileID: 2793183392547521003}
@@ -3607,6 +3622,7 @@ MonoBehaviour:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 1975826968142492581}
   m_articulation: {fileID: 668579914419547181}
+  m_baseRotation: {x: 0.0006447509, y: -0.049170654, z: 0.024018826, w: 0.99850136}
   m_collider: {fileID: 8278203799129166982}
   m_ignoring: []
 --- !u!136 &8278203799129166982
@@ -3628,10 +3644,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.021300001
   m_Direction: 0
-  m_Center: {x: -0.010650001, y: 0, z: 0}
+  m_Center: {x: 0.010650001, y: 0, z: 0}
 --- !u!171741748 &668579914419547181
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -3643,47 +3659,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.020311382, y: -0.000000001717126, z: 0.0000000029467628}
-  m_ParentAnchorRotation: {x: 0.0006447653, y: -0.049170654, z: 0.02401883, w: 0.99850136}
-  m_AnchorPosition: {x: -0.0000000016442979, y: -0.0000000016288485, z: 0.000000003121621}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorRotation: {x: -0.01652796, y: 0.6712782, z: 0.017439796, w: 0.74081594}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3840,14 +3856,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 4472352950918514440}
   - {fileID: 4079284056487749789}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 6819985428227609783}
   m_articulation: {fileID: 4777509891966093596}
+  m_baseRotation: {x: -0.016056001, y: 0.02714872, z: 0.072033994, w: 0.99690336}
   m_collider: {fileID: 3960649392639676353}
   m_ignoring: []
 --- !u!136 &3960649392639676353
@@ -3869,10 +3886,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.019699993
   m_Direction: 0
-  m_Center: {x: -0.009849996, y: 0, z: 0}
+  m_Center: {x: 0.009849996, y: 0, z: 0}
 --- !u!171741748 &4777509891966093596
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -3884,47 +3901,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.024303658, y: 0.0000000014752004, z: 0.0000000016070771}
-  m_ParentAnchorRotation: {x: -0.016056, y: 0.02714873, z: 0.07203399, w: 0.9969035}
-  m_AnchorPosition: {x: 0.0000000148444315, y: -7.3915374e-10, z: 0.000000002428995}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorRotation: {x: -0.062289026, y: 0.72411424, z: 0.039582413, w: 0.68572015}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4019,8 +4036,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8673723771604823922}
   - {fileID: 6428544702767765156}
@@ -4028,6 +4045,7 @@ MonoBehaviour:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 8485050206537816982}
   m_articulation: {fileID: 3728956299455932678}
+  m_baseRotation: {x: 0.083505884, y: -0.06501573, z: 0.058274075, w: 0.9926751}
   m_collider: {fileID: 5510485282548723096}
   m_ignoring: []
 --- !u!136 &5510485282548723096
@@ -4049,10 +4067,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.023800014
   m_Direction: 0
-  m_Center: {x: -0.011900007, y: 0, z: 0}
+  m_Center: {x: 0.011900007, y: 0, z: 0}
 --- !u!171741748 &3728956299455932678
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4063,48 +4081,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.033793084, y: 0.0000000055879354, z: 0.0000000019790605}
-  m_ParentAnchorRotation: {x: 0.0835058, y: -0.06501569, z: 0.05827409, w: 0.99267536}
-  m_AnchorPosition: {x: -0.0000000071369706, y: 0.0000000012209108, z: 0.0000000022448006}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.033793084, y: 5.820766e-11, z: 0.0000000013969839}
+  m_ParentAnchorRotation: {x: 0.017841514, y: 0.6559545, z: 0.10025352, w: 0.7479005}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4168,14 +4186,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2793183392547521003}
   - {fileID: 1294452288334566938}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 5132022630861560706}
   m_articulation: {fileID: 2069323451330982869}
+  m_baseRotation: {x: -0.037616648, y: 0.042937703, z: 0.013286048, w: 0.99828094}
   m_collider: {fileID: 6070029314331593401}
   m_ignoring:
   - {fileID: 8278203799129166982}
@@ -4198,10 +4217,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.020311393
   m_Direction: 0
-  m_Center: {x: -0.010155696, y: 0, z: 0}
+  m_Center: {x: 0.010155696, y: 0, z: 0}
 --- !u!171741748 &2069323451330982869
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4212,48 +4231,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.030720403, y: -0.0000000019390427, z: -0.0000000028521754}
-  m_ParentAnchorRotation: {x: -0.03761666, y: 0.0429377, z: 0.013286045, w: 0.99828106}
-  m_AnchorPosition: {x: -0.000000005350471, y: 3.6375608e-10, z: -0.0000000029300493}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.030720403, y: 1.4551915e-11, z: -0.0000000024738256}
+  m_ParentAnchorRotation: {x: -0.035993647, y: 0.73625284, z: -0.01720434, w: 0.6755298}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4317,13 +4336,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1294452288334566938}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 368447901167695984}
   m_articulation: {fileID: 6289555182635706622}
+  m_baseRotation: {x: 0.09111303, y: -0.004071365, z: -0.028129224, w: 0.9954349}
   m_collider: {fileID: 2499670547108809217}
   m_ignoring:
   - {fileID: 6070029314331593401}
@@ -4347,10 +4367,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.0307204
   m_Direction: 0
-  m_Center: {x: -0.0153602, y: 0, z: 0}
+  m_Center: {x: 0.0153602, y: 0, z: 0}
 --- !u!171741748 &6289555182635706622
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4361,48 +4381,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.04565055, y: -0.0000009988435, z: 0.0000021945452}
-  m_ParentAnchorRotation: {x: 0.09111303, y: -0.0040713577, z: -0.02812922, w: 0.9954349}
-  m_AnchorPosition: {x: 0.000000007449685, y: 4.4871545e-10, z: 8.966598e-10}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.04565055, y: -0.0000009983778, z: 0.000002195011}
+  m_ParentAnchorRotation: {x: 0.084317, y: 0.70099986, z: 0.044536278, w: 0.70675766}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4466,13 +4486,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2049900974719096052}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7978912805255378362}
   m_articulation: {fileID: 2337872615564533790}
+  m_baseRotation: {x: 0.26023024, y: -0.02433092, z: -0.12567802, w: 0.95702314}
   m_collider: {fileID: 3323200491126136700}
   m_ignoring:
   - {fileID: 7804388306577924580}
@@ -4496,10 +4517,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.03251291
   m_Direction: 0
-  m_Center: {x: -0.016256455, y: 0, z: 0}
+  m_Center: {x: 0.016256455, y: 0, z: 0}
 --- !u!171741748 &2337872615564533790
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4510,48 +4531,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.024852559, y: 9.313226e-10, z: -0.0000000018626451}
-  m_ParentAnchorRotation: {x: 0.2602302, y: -0.024330895, z: -0.12567803, w: 0.9570232}
-  m_AnchorPosition: {x: 8.77303e-12, y: -2.3479035e-10, z: -4.0204098e-10}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.024852559, y: 0, z: -4.656613e-10}
+  m_ParentAnchorRotation: {x: 0.27287835, y: 0.65951306, z: 0.09514276, w: 0.6939221}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4615,14 +4636,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8401518232103763147}
   - {fileID: 2166164672110974101}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 8593996075127959004}
   m_articulation: {fileID: 5988250320515000133}
+  m_baseRotation: {x: -0.034319542, y: 0.0046118353, z: 0.09300701, w: 0.9950631}
   m_collider: {fileID: 707955162287519006}
   m_ignoring: []
 --- !u!136 &707955162287519006
@@ -4644,10 +4666,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02159999
   m_Direction: 0
-  m_Center: {x: -0.010799995, y: 0, z: 0}
+  m_Center: {x: 0.010799995, y: 0, z: 0}
 --- !u!171741748 &5988250320515000133
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4658,48 +4680,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.027549593, y: 8.3991836e-10, z: 0.0000000017589628}
-  m_ParentAnchorRotation: {x: -0.034319546, y: 0.0046118344, z: 0.09300702, w: 0.9950632}
-  m_AnchorPosition: {x: 0.000000009291078, y: -9.675544e-10, z: 0.0000000013912059}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.027549593, y: 8.644747e-10, z: 0.0000000013085355}
+  m_ParentAnchorRotation: {x: -0.09003348, y: 0.70687693, z: 0.04149831, w: 0.7003549}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4763,13 +4785,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5800653354168258396}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 6648908048506172740}
   m_articulation: {fileID: 3982703039111661154}
+  m_baseRotation: {x: -0.033632524, y: 0.0027898494, z: -0.005676029, w: 0.99941427}
   m_collider: {fileID: 6218594237467191624}
   m_ignoring:
   - {fileID: 2840598871635889053}
@@ -4792,7 +4815,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.026573407
   m_Direction: 0
   m_Center: {x: -0.013286703, y: 0, z: 0}
@@ -4807,47 +4830,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.0389961, y: -3.4924597e-10, z: 6.4028427e-10}
-  m_ParentAnchorRotation: {x: -0.033632528, y: 0.002789847, z: -0.005676032, w: 0.9994143}
+  m_ParentAnchorRotation: {x: 0.7047199, y: -0.027795378, z: -0.7086654, w: 0.019768259}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4911,13 +4934,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 735044825105476822}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 3073446711588218574}
   m_articulation: {fileID: 8847086875599036562}
+  m_baseRotation: {x: -0.033632524, y: 0.0027898385, z: -0.005676023, w: 0.99941427}
   m_collider: {fileID: 7522857683751686335}
   m_ignoring:
   - {fileID: 7840859697774700410}
@@ -4940,10 +4964,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.026573407
   m_Direction: 0
-  m_Center: {x: -0.013286703, y: 0, z: 0}
+  m_Center: {x: 0.013286703, y: 0, z: 0}
 --- !u!171741748 &8847086875599036562
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -4955,47 +4979,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.0389961, y: 3.4924597e-10, z: -6.4028427e-10}
-  m_ParentAnchorRotation: {x: -0.033632528, y: 0.0027898469, z: -0.0056760283, w: 0.9994143}
-  m_AnchorPosition: {x: -7.018455e-13, y: 3.9149717e-10, z: -6.1535854e-10}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorRotation: {x: -0.01976823, y: 0.7086654, z: -0.027795345, w: 0.7047199}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5059,13 +5083,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2166164672110974101}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 3476413328513738111}
   m_articulation: {fileID: 2583948936138129299}
+  m_baseRotation: {x: -0.011228235, y: 0.0043788743, z: 0.0019782674, w: 0.99992543}
   m_collider: {fileID: 8187344937436818869}
   m_ignoring:
   - {fileID: 707955162287519006}
@@ -5088,10 +5113,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02754959
   m_Direction: 0
-  m_Center: {x: -0.013774795, y: 0, z: 0}
+  m_Center: {x: 0.013774795, y: 0, z: 0}
 --- !u!171741748 &2583948936138129299
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -5102,48 +5127,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.04292699, y: -4.3655746e-10, z: 8.58563e-10}
-  m_ParentAnchorRotation: {x: -0.011228235, y: 0.0043788804, z: 0.0019782674, w: 0.99992543}
-  m_AnchorPosition: {x: -5.03005e-12, y: -4.161634e-10, z: 3.8363124e-10}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.04292699, y: -4.0745363e-10, z: 3.929017e-10}
+  m_ParentAnchorRotation: {x: -0.009338408, y: 0.71015036, z: -0.0065407148, w: 0.7039577}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5238,12 +5263,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
   m_articulation: {fileID: 7846531855223505955}
+  m_baseRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
   m_collider: {fileID: 8943927885733066005}
   m_ignoring:
   - {fileID: 8553948779823751857}
@@ -5268,7 +5294,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.04565055
   m_Direction: 0
   m_Center: {x: -0.022825275, y: 0, z: 0}
@@ -5283,47 +5309,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.034073558, y: 0.009419835, z: 0.022998573}
-  m_ParentAnchorRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
+  m_ParentAnchorRotation: {x: 0.5852714, y: -0.15934497, z: -0.7837462, w: 0.13344818}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5390,11 +5416,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints: []
   m_parent: {fileID: 6612905654123733348}
-  m_articulation: {fileID: 0}
+  m_articulation: {fileID: 662496856572886642}
+  m_baseRotation: {x: 0, y: -0, z: -0, w: 1}
   m_collider: {fileID: 0}
   m_ignoring:
   - {fileID: 1616148394736882380}
@@ -5423,19 +5450,19 @@ ArticulationBody:
   m_GameObject: {fileID: 7604588265359166568}
   m_Enabled: 1
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 20
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
   m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 1
+  m_Twist: 0
   m_XDrive:
     lowerLimit: 0
     upperLimit: 0
@@ -5446,8 +5473,8 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
+    lowerLimit: -90
+    upperLimit: 10
     stiffness: 0
     damping: 0
     forceLimit: 3.4028235e+38
@@ -5455,17 +5482,17 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
+    lowerLimit: 10
+    upperLimit: 90
     stiffness: 0
     damping: 0
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5529,12 +5556,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
   m_articulation: {fileID: 3000374731024367677}
+  m_baseRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
   m_collider: {fileID: 1846751229178479581}
   m_ignoring:
   - {fileID: 3323200491126136700}
@@ -5559,10 +5587,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02485256
   m_Direction: 0
-  m_Center: {x: -0.01242628, y: 0, z: 0}
+  m_Center: {x: 0.01242628, y: 0, z: 0}
 --- !u!171741748 &3000374731024367677
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -5574,47 +5602,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.020069301, y: -0.011554099, z: 0.0104965195}
-  m_ParentAnchorRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
+  m_ParentAnchorRotation: {x: 0.25993815, y: 0.28233385, z: 0.27093914, w: 0.8827864}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5678,12 +5706,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
   m_articulation: {fileID: 5913427642031137091}
+  m_baseRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
   m_collider: {fileID: 1830572300641330705}
   m_ignoring:
   - {fileID: 4638589650352643429}
@@ -5707,10 +5736,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.037927303
   m_Direction: 0
-  m_Center: {x: -0.018963652, y: 0, z: 0}
+  m_Center: {x: 0.018963652, y: 0, z: 0}
 --- !u!171741748 &5913427642031137091
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -5722,47 +5751,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.09599624, y: -0.0073164543, z: 0.02355068}
-  m_ParentAnchorRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
+  m_ParentAnchorRotation: {x: 0.052300822, y: 0.7193179, z: -0.00890838, w: 0.6926521}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5826,12 +5855,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
   m_articulation: {fileID: 820801858548585325}
+  m_baseRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
   m_collider: {fileID: 1238858484428306465}
   m_ignoring:
   - {fileID: 8187344937436818869}
@@ -5855,10 +5885,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.042926993
   m_Direction: 0
-  m_Center: {x: -0.021463497, y: 0, z: 0}
+  m_Center: {x: 0.021463497, y: 0, z: 0}
 --- !u!171741748 &820801858548585325
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -5870,47 +5900,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: 0.095646605, y: -0.0025431544, z: 0.0017259055}
-  m_ParentAnchorRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
+  m_ParentAnchorRotation: {x: 0.03024255, y: 0.74158037, z: -0.04306427, w: 0.668797}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
   m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 1
+  m_SwingZ: 0
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 10
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5974,14 +6004,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 338433835512914978}
   - {fileID: 7553764191543912889}
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 815765340106528948}
   m_articulation: {fileID: 6745165971633081126}
+  m_baseRotation: {x: -0.08270365, y: 0.07696168, z: 0.084062226, w: 0.99003565}
   m_collider: {fileID: 9061591096531021279}
   m_ignoring:
   - {fileID: 431481836123886159}
@@ -6004,7 +6035,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.033793095
   m_Direction: 0
   m_Center: {x: -0.016896548, y: 0, z: 0}
@@ -6019,47 +6050,47 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 1
   m_ParentAnchorPosition: {x: -0.03251291, y: -0.0000000044237822, z: 9.313226e-10}
-  m_ParentAnchorRotation: {x: -0.082703665, y: 0.07696169, z: 0.08406225, w: 0.9900358}
+  m_ParentAnchorRotation: {x: 0.6456409, y: 0.00096063316, z: -0.75448114, w: 0.11792134}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 360
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6123,14 +6154,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 2
-  m_maxDepenetrationVelocity: 1
+  m_maxAngularVelocity: 1.75
+  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6428544702767765156}
   - {fileID: 2049900974719096052}
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 2705992067945062389}
   m_articulation: {fileID: 7926404955344609114}
+  m_baseRotation: {x: -0.08270373, y: 0.0769617, z: 0.08406223, w: 0.99003565}
   m_collider: {fileID: 7804388306577924580}
   m_ignoring:
   - {fileID: 5510485282548723096}
@@ -6153,10 +6185,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.033793084
   m_Direction: 0
-  m_Center: {x: -0.016896542, y: 0, z: 0}
+  m_Center: {x: 0.016896542, y: 0, z: 0}
 --- !u!171741748 &7926404955344609114
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -6167,48 +6199,48 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.032512914, y: 0.0000000073341653, z: 0.0000000023283064}
-  m_ParentAnchorRotation: {x: -0.08270367, y: 0.07696168, z: 0.08406225, w: 0.9900358}
-  m_AnchorPosition: {x: 0.000000004070365, y: 0.0000000038050354, z: 0.0000000031949536}
-  m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ParentAnchorPosition: {x: 0.032512914, y: 0.0000000048894435, z: 0.0000000018626451}
+  m_ParentAnchorRotation: {x: -0.11792131, y: 0.75448114, z: 0.00096065924, w: 0.6456409}
+  m_AnchorPosition: {x: 0, y: 0, z: 0}
+  m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 2
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
+  m_SwingY: 0
+  m_SwingZ: 1
+  m_Twist: 1
   m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -10
+    upperLimit: 90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -135
+    upperLimit: -45
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 100
-    forceLimit: 3.4028235e+38
+    lowerLimit: -150
+    upperLimit: -90
+    stiffness: 100000
+    damping: 10000
+    forceLimit: 0
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_JointFriction: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

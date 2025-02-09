@@ -78,12 +78,6 @@ Shader "TLab/Project/Lit/Toon"
         {
             Name "OUTLINE"
 
-            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
-            Blend One OneMinusSrcAlpha
-            ZWrite On
-
-            LOD 100
-
             Cull Front
 
             CGPROGRAM

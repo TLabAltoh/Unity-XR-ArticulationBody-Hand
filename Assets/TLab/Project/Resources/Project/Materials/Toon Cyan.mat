@@ -26,7 +26,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Width: 0.01
-    - _ZOffset: 0.08
+    - _ZOffset: 0
     m_Colors:
     - _Color: {r: 0, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 0.2444452, g: 1, b: 0, a: 0.7490196}

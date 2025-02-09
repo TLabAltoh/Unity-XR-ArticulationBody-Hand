@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -94,6 +95,15 @@ namespace TLab.XR.ArticulationBodyHand.Editor
             "pinky"
         };
 
+        private static readonly HandJointId[] fbxHandFirstFingerIds =
+        {
+            HandJointId.HandThumb0,
+            HandJointId.HandIndex1,
+            HandJointId.HandRing1,
+            HandJointId.HandPinky0,
+            HandJointId.HandMiddle1,
+        };
+
         private void Setup(ArticulationBodyHand hand, SlaveJoint slave, SlaveJoint.HandJointType type, ArticulationDrive drive)
         {
             var child = slave.transform.GetChild(0);
@@ -102,28 +112,19 @@ namespace TLab.XR.ArticulationBodyHand.Editor
             {
                 var dist = Vector3.Distance(slave.transform.position, child.transform.position);
 
-                Component trash;
-                trash = slave.gameObject.GetComponent<Rigidbody>();
-                if (trash && trash is not ArticulationBody)
-                    DestroyImmediate(trash);
-                trash = slave.gameObject.GetComponent<ConfigurableJoint>();
-                if (trash) DestroyImmediate(trash);
-
                 if (type == SlaveJoint.HandJointType.WristRoot)
                 {
-                    trash = slave.gameObject.GetComponent<CapsuleCollider>();
-                    if (trash) DestroyImmediate(trash);
                 }
                 else
                     slave.gameObject.RequireComponent<CapsuleCollider>();
 
-                slave.InitArticulation(type, drive);
+                slave.InitArticulation(type, drive, (hand.hand).Handedness == Handedness.Right);
 
                 if (slave.TryGetComponent(out CapsuleCollider col))
                 {
                     col.height = dist;
                     col.direction = 0;  // X-Axis
-                    col.radius = 0.01f;
+                    col.radius = 0.008f;
 
                     switch (Hand.Handedness)
                     {
@@ -136,14 +137,14 @@ namespace TLab.XR.ArticulationBodyHand.Editor
                     }
                 }
 
-                EditorUtility.SetDirty(slave);
+                EditorUtility.SetDirty(slave.gameObject);
             }
         }
 
         private void Setup(ArticulationBodyHand hand, HandJointId id)
         {
             if (hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0) != null && hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave != null)
-                Setup(hand, hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave, SlaveJoint.HandJointType.Finger, (id >= HandJointId.HandThumb0 && id <= HandJointId.HandThumb3) ? m_instance.fingerDrive.thumb.ToArticulationDrive() : m_instance.fingerDrive.others.ToArticulationDrive());
+                Setup(hand, hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave, fbxHandFirstFingerIds.Any(t => t == id) ? SlaveJoint.HandJointType.FirstFinger : SlaveJoint.HandJointType.OtherFinger, (id >= HandJointId.HandThumb0 && id <= HandJointId.HandThumb3) ? m_instance.fingerDrive.thumb.ToArticulationDrive() : m_instance.fingerDrive.others.ToArticulationDrive());
         }
 
         private void Setup(ArticulationBodyHand hand)
