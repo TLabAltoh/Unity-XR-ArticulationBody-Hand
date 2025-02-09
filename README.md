@@ -7,6 +7,14 @@ Previously, I used ```ConfiguredJoint``` to implement physical hand but it's not
 - [meta-xr-all-in-one-sdk](https://developers.meta.com/horizon/downloads/package/meta-xr-sdk-all-in-one-upm/)
 
 ## Get Started
+### Install
+Clone this repository with the following command.
+
+```bat
+git clone https://github.com/TLabAltoh/Unity-XR-ArticulationBody-Hand
+cd Unity-XR-ArticulationBody-Hand
+```
+
 ### Project Settings
 - Player
 	- Other Settings
@@ -37,5 +45,7 @@ Previously, I used ```ConfiguredJoint``` to implement physical hand but it's not
 	- Fixed Timestep: 0.01
 	- Maximum Allowed Timestep: 0.1
 
+Select ```Multi Pass``` in ```ProjectSettings/XR Plug-in Management/Oculus/Stereo Rendering Mode``` for UI canvas and hand tracking rendering.
+
 ### Sample Scene
-- Assets/TLab/XR-ArticulationBody-Hand/Scenes/SampleScene.unity
+```Assets/TLab/XR-ArticulationBody-Hand/Scenes/SampleScene.unity```
