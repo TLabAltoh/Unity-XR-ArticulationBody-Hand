@@ -253,16 +253,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 750000
-    damping: 500
+    stiffness: 1500000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 750000
-    damping: 500
+    stiffness: 1500000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -504,16 +504,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -629,8 +629,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -705,11 +705,11 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 150000
-      damping: 500
+      stiffness: 300000
+      damping: 1000
     others:
-      stiffness: 100000
-      damping: 500
+      stiffness: 200000
+      damping: 1000
   m_wristRoot:
     m_master: {fileID: 0}
     m_slave: {fileID: 2339149564054534472}
@@ -846,8 +846,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1099,8 +1099,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1280,8 +1280,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1405,16 +1405,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1564,16 +1564,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1720,8 +1720,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -1846,8 +1846,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 150000
-    damping: 500
+    stiffness: 300000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -2026,8 +2026,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -2339,16 +2339,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -2464,8 +2464,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -2540,11 +2540,11 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 150000
-      damping: 500
+      stiffness: 300000
+      damping: 1000
     others:
-      stiffness: 100000
-      damping: 500
+      stiffness: 200000
+      damping: 1000
   m_wristRoot:
     m_master: {fileID: 0}
     m_slave: {fileID: 8557852169553853907}
@@ -2682,8 +2682,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -2807,8 +2807,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3086,16 +3086,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3212,8 +3212,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3430,8 +3430,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3587,8 +3587,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 150000
-    damping: 500
+    stiffness: 300000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3713,8 +3713,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3839,16 +3839,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -3965,16 +3965,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 750000
-    damping: 500
+    stiffness: 1500000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 750000
-    damping: 500
+    stiffness: 1500000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -4090,8 +4090,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -4215,8 +4215,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -4340,8 +4340,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -4465,8 +4465,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 500
+    stiffness: 200000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -5001,16 +5001,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -5126,16 +5126,16 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
   m_YDrive:
     lowerLimit: -30
     upperLimit: 30
-    stiffness: 500000
-    damping: 500
+    stiffness: 1000000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -5252,8 +5252,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 150000
-    damping: 500
+    stiffness: 300000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
@@ -5378,8 +5378,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 150000
-    damping: 500
+    stiffness: 300000
+    damping: 1000
     forceLimit: 0
     target: 0
     targetVelocity: 0
