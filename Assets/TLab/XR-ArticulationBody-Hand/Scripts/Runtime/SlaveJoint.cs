@@ -56,7 +56,20 @@ namespace TLab.XR.ArticulationBodyHand
         private void GetCollisions()
         {
             m_collider = GetComponent<Collider>();
-            m_ignoring = GetComponentsInChildren<Collider>().Where(t => t != m_collider).ToList();
+
+            if (m_collider != null)
+            {
+                var material = new PhysicMaterial("PhysicsHand");
+                material.frictionCombine = PhysicMaterialCombine.Average;
+                material.bounceCombine = PhysicMaterialCombine.Minimum;
+                material.dynamicFriction = 1f;
+                material.staticFriction = 1;
+
+                m_collider.material = material;
+                m_collider.sharedMaterial = material;
+
+                m_ignoring = GetComponentsInChildren<Collider>().Where(t => t != m_collider).ToList();
+            }
         }
 
         private void GetParentJoints()
