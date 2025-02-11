@@ -2,6 +2,8 @@
 
 Experimental project implementing ArticulationBody-based physical hands in meta-quest's unity-sdk.
 
+[demonstration video here](https://github.com/user-attachments/assets/81c15125-86b5-4db0-b68c-40c5bde9efba)
+
 ## Backgournd
 
 Previously, I used ```ConfiguredJoint``` to implement physical hand but it's not stable. Rcently, I found this physics hand demo made by ultralerp. It uses ```ArticulationBody``` for physics hand implementation and it seems stable. I want to use it on Meta Quest so try replacing current physics component from ```ConfiguredJoint``` to ```ArticulationBody```.
