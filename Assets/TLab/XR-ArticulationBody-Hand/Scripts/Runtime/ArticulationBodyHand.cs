@@ -31,22 +31,33 @@ namespace TLab.XR.ArticulationBodyHand
         {
             public float stiffness = 1e+5f;
             public float damping = 500;
+#if UNITY_2022_3_OR_NEWER
             public ArticulationDriveType driveType = ArticulationDriveType.Force;
+#endif
 
             public ArticulationDrive ToArticulationDrive()
             {
                 var drive = new ArticulationDrive();
                 drive.stiffness = stiffness;
                 drive.damping = damping;
+#if UNITY_2022_3_OR_NEWER
                 drive.driveType = driveType;
+#endif
                 return drive;
             }
 
-            public SerializableArticulationDrive(float stiffness, float damping, ArticulationDriveType driveType)
+            public SerializableArticulationDrive(float stiffness, float damping
+#if UNITY_2022_3_OR_NEWER
+                ,ArticulationDriveType driveType
+#endif
+                )
             {
                 this.stiffness = stiffness;
                 this.damping = damping;
+
+#if UNITY_2022_3_OR_NEWER
                 this.driveType = driveType;
+#endif
             }
 
             public SerializableArticulationDrive() { }

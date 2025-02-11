@@ -95,16 +95,16 @@ namespace TLab.XR.ArticulationBodyHand.Editor
             "pinky"
         };
 
-        private static readonly HandJointId[] fbxHandFirstFingerIds =
+        private static readonly HandJointId[] fbxSphericalHandJointIds =
         {
-            HandJointId.HandThumb0,
+            HandJointId.HandThumb1,
             HandJointId.HandIndex1,
             HandJointId.HandRing1,
-            HandJointId.HandPinky0,
+            HandJointId.HandPinky1,
             HandJointId.HandMiddle1,
         };
 
-        private void Setup(ArticulationBodyHand hand, SlaveJoint slave, SlaveJoint.HandJointType type, ArticulationDrive drive)
+        private void Setup(ArticulationBodyHand hand, HandJointId id, SlaveJoint slave, SlaveJoint.HandJointType type, ArticulationDrive drive)
         {
             var child = slave.transform.GetChild(0);
 
@@ -118,11 +118,11 @@ namespace TLab.XR.ArticulationBodyHand.Editor
                 else
                     slave.gameObject.RequireComponent<CapsuleCollider>();
 
-                slave.InitArticulation(type, drive, (hand.hand).Handedness == Handedness.Right);
+                slave.InitArticulation(id, type, drive, (hand.hand).Handedness == Handedness.Right);
 
                 if (slave.TryGetComponent(out CapsuleCollider col))
                 {
-                    col.height = dist;
+                    col.height = dist * 1.5f;
                     col.direction = 0;  // X-Axis
                     col.radius = 0.008f;
 
@@ -141,10 +141,18 @@ namespace TLab.XR.ArticulationBodyHand.Editor
             }
         }
 
+        private SlaveJoint.HandJointType GetHandJointTypeById(HandJointId id)
+        {
+            if (id == HandJointId.HandThumb0 || id == HandJointId.HandPinky0)
+                return SlaveJoint.HandJointType.FixedJoint;
+
+            return fbxSphericalHandJointIds.Any(t => t == id) ? SlaveJoint.HandJointType.SphericalJoint : SlaveJoint.HandJointType.RevoluteJoint;
+        }
+
         private void Setup(ArticulationBodyHand hand, HandJointId id)
         {
             if (hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0) != null && hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave != null)
-                Setup(hand, hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave, fbxHandFirstFingerIds.Any(t => t == id) ? SlaveJoint.HandJointType.FirstFinger : SlaveJoint.HandJointType.OtherFinger, (id >= HandJointId.HandThumb0 && id <= HandJointId.HandThumb3) ? m_instance.fingerDrive.thumb.ToArticulationDrive() : m_instance.fingerDrive.others.ToArticulationDrive());
+                Setup(hand, id, hand.GetFingerByIndex((int)id - (int)HandJointId.HandThumb0).slave, GetHandJointTypeById(id), (id >= HandJointId.HandThumb0 && id <= HandJointId.HandThumb3) ? m_instance.fingerDrive.thumb.ToArticulationDrive() : m_instance.fingerDrive.others.ToArticulationDrive());
         }
 
         private void Setup(ArticulationBodyHand hand)
@@ -152,7 +160,7 @@ namespace TLab.XR.ArticulationBodyHand.Editor
             for (var i = (int)HandJointId.HandThumb0; i <= (int)HandJointId.HandPinky3; ++i)
                 Setup(hand, (HandJointId)i);
 
-            Setup(hand, m_instance.wristRoot.slave, SlaveJoint.HandJointType.WristRoot, new ArticulationDrive());
+            Setup(hand, HandJointId.HandWristRoot, m_instance.wristRoot.slave, SlaveJoint.HandJointType.WristRoot, new ArticulationDrive());
 
             m_instance.wristRoot.slave.Setup();
             m_instance.GetFingers().ForEach((t) => t.slave.Setup());

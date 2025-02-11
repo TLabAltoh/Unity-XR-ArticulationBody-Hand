@@ -51,21 +51,20 @@ Shader "TLab/Project/Lit/Toon"
             half4 frag(v2f i) : SV_Target
             {
                 half nl = max(0, dot(i.normal, _WorldSpaceLightPos0.xyz));
-                if (nl <= 1e-3) {
-                    nl = 0.3;
-                }
-                else if (nl <= 0.3) {
-                    nl = 0.5;
-                }
-                else if (nl >= 0.975) {
-                    _Color = half4(1, 1, 1, 1);
-                    nl = 1.0;
-                }
-                else {
-                    nl = 1.0;
-                }
+                half nt = nl;
 
-                _Color.rgb *= nl;
+                half t0 = nl < 1e-3;
+                nt = 0.3 * t0 + nt * (1.0 - t0);
+                half t1 = nt < 0.3;
+                nt = 0.5 * t1 + nt * (1.0 - t1);
+                half t2 = nt > 0.9;
+                nt = 1.0 * t2 + nt * (1.0 - t2);
+                half t3 = t0 || t1 || t2;
+                nt = 1.0 * (1. - t3) + nt * t3;
+
+                _Color = _Color * (1. - t2) + half4(1, 1, 1, 1) * t2;
+                _Color.rgb *= nt;
+
                 half4 col = _Color;
                 return col;
             }

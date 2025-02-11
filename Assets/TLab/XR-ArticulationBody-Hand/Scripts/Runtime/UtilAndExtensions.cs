@@ -19,23 +19,23 @@ namespace TLab.XR.ArticulationBodyHand
         /// </summary>
         /// <param name="body"></param>
         /// <param name="targetLocalRotation"></param>
-        public static void SetDriveRotation(this ArticulationBody body, Quaternion targetLocalRotation, float forceLimmit)
+        public static void SetDriveRotation(this ArticulationBody body, Quaternion targetLocalRotation, float forceLimit)
         {
             Vector3 target = body.ToTargetRotationInReducedSpace(targetLocalRotation);
 
             // assign to the drive targets...
             ArticulationDrive xDrive = body.xDrive;
-            xDrive.forceLimit = forceLimmit;
+            xDrive.forceLimit = forceLimit;
             xDrive.target = target.x;
             body.xDrive = xDrive;
 
             ArticulationDrive yDrive = body.yDrive;
-            yDrive.forceLimit = forceLimmit;
+            yDrive.forceLimit = forceLimit;
             yDrive.target = target.y;
             body.yDrive = yDrive;
 
             ArticulationDrive zDrive = body.zDrive;
-            zDrive.forceLimit = forceLimmit;
+            zDrive.forceLimit = forceLimit;
             zDrive.target = target.z;
             body.zDrive = zDrive;
         }

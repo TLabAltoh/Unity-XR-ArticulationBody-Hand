@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95542921902467111}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6612905654123733348}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &940937453385477558
 SkinnedMeshRenderer:
@@ -146,13 +146,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402282120480920607}
-  serializedVersion: 2
   m_LocalRotation: {x: 5.2041704e-18, y: 1.3877788e-17, z: -1.7997756e-17, w: 1}
   m_LocalPosition: {x: -0.0199, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6698960103694156464}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456814857183819795
 GameObject:
@@ -180,7 +180,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456814857183819795}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.26023024, y: -0.024330912, z: -0.12567802, w: 0.95702314}
   m_LocalPosition: {x: -0.024852559, y: -8.881784e-18, z: 1.0547119e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -188,6 +187,7 @@ Transform:
   m_Children:
   - {fileID: 8483544835501732105}
   m_Father: {fileID: 1774079291687715982}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &338433835512914978
 MonoBehaviour:
@@ -204,7 +204,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7553764191543912889}
   - {fileID: 2339149564054534472}
@@ -223,19 +222,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456814857183819795}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.032512907
+  m_Radius: 0.008
+  m_Height: 0.048769362
   m_Direction: 0
   m_Center: {x: -0.016256453, y: 0, z: 0}
 --- !u!171741748 &6737417260018713161
@@ -246,38 +236,36 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456814857183819795}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.024852559, y: 0, z: 4.656613e-10}
   m_ParentAnchorRotation: {x: 0.6939221, y: 0.09514273, z: -0.65951306, w: -0.27287832}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 0
-  m_SwingZ: 1
+  m_SwingY: 1
+  m_SwingZ: 0
   m_Twist: 1
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 750000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -135
-    upperLimit: -45
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 750000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -286,24 +274,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &679046121849284046
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +306,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679046121849284046}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
   m_LocalPosition: {x: 0.034073558, y: -0.009419835, z: -0.022998573}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -338,6 +313,7 @@ Transform:
   m_Children:
   - {fileID: 5132022630861560706}
   m_Father: {fileID: 7047915552516660159}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1294452288334566938
 MonoBehaviour:
@@ -354,7 +330,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
@@ -373,19 +348,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679046121849284046}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.04565055
+  m_Radius: 0.008
+  m_Height: 0.06847583
   m_Direction: 0
   m_Center: {x: 0.022825275, y: 0, z: 0}
 --- !u!171741748 &4596879972577754103
@@ -396,64 +362,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679046121849284046}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.034073558, y: -0.009419835, z: -0.022998573}
   m_ParentAnchorRotation: {x: -0.13344815, y: 0.7837462, z: -0.15934494, w: 0.5852714}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 0
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
   m_SwingY: 1
-  m_SwingZ: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    stiffness: 200
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &692384306683767320
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +432,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692384306683767320}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
   m_LocalPosition: {x: -0.08869379, y: 0.006529307, z: 0.017465241}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -488,6 +439,7 @@ Transform:
   m_Children:
   - {fileID: 2716302260022212835}
   m_Father: {fileID: 8989564037657637972}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5800653354168258396
 MonoBehaviour:
@@ -504,7 +456,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
@@ -522,19 +473,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692384306683767320}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.0389961
+  m_Radius: 0.008
+  m_Height: 0.05849415
   m_Direction: 0
   m_Center: {x: -0.01949805, y: 0, z: 0}
 --- !u!171741748 &7443170316155853120
@@ -545,8 +487,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692384306683767320}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.08869379, y: 0.006529307, z: 0.017465241}
   m_ParentAnchorRotation: {x: 0.6127878, y: -0.07281283, z: -0.78688234, w: 0.0023659244}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -562,47 +504,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &826532628887696855
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +557,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826532628887696855}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.02585241, y: 0.0071160593, z: -0.0032929424, w: 0.99963504}
   m_LocalPosition: {x: 0.0379273, y: 3.330669e-18, z: 1.3322676e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -637,6 +564,7 @@ Transform:
   m_Children:
   - {fileID: 4006658955070136878}
   m_Father: {fileID: 289574919833325739}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4472352950918514440
 MonoBehaviour:
@@ -653,7 +581,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 4079284056487749789}
   - {fileID: 8557852169553853907}
@@ -671,19 +598,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826532628887696855}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.024303649
+  m_Radius: 0.008
+  m_Height: 0.036455475
   m_Direction: 0
   m_Center: {x: 0.012151824, y: 0, z: 0}
 --- !u!171741748 &3999542635234779650
@@ -694,8 +612,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826532628887696855}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.037927303, y: 4.947651e-10, z: 5.966285e-10}
   m_ParentAnchorRotation: {x: -0.015951954, y: 0.71188056, z: -0.020608876, w: 0.7018169}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -712,11 +630,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -725,7 +642,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -734,24 +650,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &928693604841492018
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +680,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928693604841492018}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -784,6 +687,7 @@ Transform:
   m_Children:
   - {fileID: 6612905654123733348}
   m_Father: {fileID: 4554605582134174849}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8122829678093739573
 MonoBehaviour:
@@ -801,13 +705,11 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 100000
-      damping: 10000
-      driveType: 0
+      stiffness: 150000
+      damping: 500
     others:
       stiffness: 100000
-      damping: 10000
-      driveType: 0
+      damping: 500
   m_wristRoot:
     m_master: {fileID: 0}
     m_slave: {fileID: 2339149564054534472}
@@ -872,7 +774,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939213496841993806}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.016056, y: 0.027148725, z: 0.07203398, w: 0.99690336}
   m_LocalPosition: {x: -0.024303643, y: 3.0531133e-18, z: 4.440892e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -880,6 +781,7 @@ Transform:
   m_Children:
   - {fileID: 2607712473213213878}
   m_Father: {fileID: 2060784944251083728}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &790960583759689706
 MonoBehaviour:
@@ -896,7 +798,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7433389324193056591}
   - {fileID: 1823607433949876686}
@@ -914,19 +815,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939213496841993806}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.019899985
+  m_Radius: 0.008
+  m_Height: 0.029849976
   m_Direction: 0
   m_Center: {x: -0.009949992, y: 0, z: 0}
 --- !u!171741748 &1681960766309263034
@@ -937,8 +829,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939213496841993806}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.024303658, y: -0.0000000014333636, z: -0.0000000015770638}
   m_ParentAnchorRotation: {x: 0.68572015, y: 0.03958237, z: -0.72411424, w: 0.062289044}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -955,11 +847,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -968,7 +859,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -977,24 +867,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &977054122404839886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +898,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977054122404839886}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1032,6 +909,7 @@ Transform:
   - {fileID: 3073446711588218574}
   - {fileID: 7978912805255378362}
   m_Father: {fileID: 8618204616760674993}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8557852169553853907
 MonoBehaviour:
@@ -1046,9 +924,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
-  m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
+  m_maxLinearVelocity: 10
+  m_maxAngularVelocity: 100
   m_parentJoints: []
   m_parent: {fileID: 8618204616760674993}
   m_articulation: {fileID: 843236277747467028}
@@ -1080,8 +957,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977054122404839886}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 20
+  serializedVersion: 3
+  m_Mass: 0.3
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1102,7 +979,6 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: 0
     upperLimit: 0
@@ -1111,7 +987,6 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: 0
     upperLimit: 0
@@ -1120,24 +995,12 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &1226554901521357577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1027,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226554901521357577}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.034319542, y: 0.004611837, z: 0.09300701, w: 0.9950631}
   m_LocalPosition: {x: -0.027549583, y: 0, z: -4.440892e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1172,6 +1034,7 @@ Transform:
   m_Children:
   - {fileID: 7114094512626066591}
   m_Father: {fileID: 468336682674233538}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1111087942043868143
 MonoBehaviour:
@@ -1188,7 +1051,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7580051153680021255}
   - {fileID: 3455068672581190300}
@@ -1206,19 +1068,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226554901521357577}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.021999981
+  m_Radius: 0.008
+  m_Height: 0.03299997
   m_Direction: 0
   m_Center: {x: -0.010999991, y: 0, z: 0}
 --- !u!171741748 &4143585868705808076
@@ -1229,8 +1082,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226554901521357577}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.027549593, y: -0.0000000015234036, z: -0.0000000011593784}
   m_ParentAnchorRotation: {x: 0.7003548, y: 0.04149828, z: -0.706877, w: 0.09003351}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1247,11 +1100,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -1260,7 +1112,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -1269,24 +1120,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &1350786030775285042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1150,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350786030775285042}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1320,6 +1158,7 @@ Transform:
   - {fileID: 8989564037657637972}
   - {fileID: 6743983648153399712}
   m_Father: {fileID: 6003178673006567350}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4200087319974102388
 Animator:
@@ -1368,7 +1207,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449394834031051052}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.03761665, y: 0.042937692, z: 0.013286047, w: 0.99828094}
   m_LocalPosition: {x: -0.030720409, y: -3.330669e-18, z: -8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1376,6 +1214,7 @@ Transform:
   m_Children:
   - {fileID: 7077747365678687262}
   m_Father: {fileID: 5195671102573511580}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &367995579719139305
 MonoBehaviour:
@@ -1392,7 +1231,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 7370805459657717025}
   - {fileID: 6604817682116920526}
@@ -1411,19 +1249,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449394834031051052}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.020311393
+  m_Radius: 0.008
+  m_Height: 0.03046709
   m_Direction: 0
   m_Center: {x: -0.010155696, y: 0, z: 0}
 --- !u!171741748 &2994641899455975614
@@ -1434,8 +1263,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449394834031051052}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.030720403, y: 0.000000002059096, z: 0.0000000023283064}
   m_ParentAnchorRotation: {x: 0.6755298, y: -0.017204378, z: -0.73625284, w: 0.035993684}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1452,11 +1281,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -1465,7 +1293,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -1474,24 +1301,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &1495412736182066036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1333,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495412736182066036}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.053159367, y: 0.12310341, z: -0.049813494, w: 0.9897163}
   m_LocalPosition: {x: 0.08869379, y: -0.006529307, z: -0.017465241}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1526,6 +1340,7 @@ Transform:
   m_Children:
   - {fileID: 1486218171843020050}
   m_Father: {fileID: 7047915552516660159}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &735044825105476822
 MonoBehaviour:
@@ -1542,7 +1357,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
@@ -1560,19 +1374,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495412736182066036}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.0389961
+  m_Radius: 0.008
+  m_Height: 0.05849415
   m_Direction: 0
   m_Center: {x: 0.01949805, y: 0, z: 0}
 --- !u!171741748 &8021818354649794094
@@ -1583,8 +1388,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495412736182066036}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.08869379, y: -0.006529307, z: -0.017465241}
   m_ParentAnchorRotation: {x: -0.002365891, y: 0.78688234, z: -0.07281281, w: 0.6127878}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1600,47 +1405,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -150
-    upperLimit: -90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &1651620054111978834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1455,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651620054111978834}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1673,6 +1463,7 @@ Transform:
   - {fileID: 6003178673006567350}
   - {fileID: 1767347335944194892}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670524949799375601
 GameObject:
@@ -1700,7 +1491,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670524949799375601}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.09111303, y: -0.0040713567, z: -0.02812922, w: 0.9954349}
   m_LocalPosition: {x: -0.04565054, y: 0.0000009982332, z: -0.0000021940255}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1708,6 +1498,7 @@ Transform:
   m_Children:
   - {fileID: 9214166410039594932}
   m_Father: {fileID: 7725062641258691438}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7370805459657717025
 MonoBehaviour:
@@ -1724,7 +1515,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6604817682116920526}
   - {fileID: 2339149564054534472}
@@ -1743,19 +1533,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670524949799375601}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.0307204
+  m_Radius: 0.008
+  m_Height: 0.0460806
   m_Direction: 0
   m_Center: {x: -0.0153602, y: 0, z: 0}
 --- !u!171741748 &8293342648542785602
@@ -1766,64 +1547,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670524949799375601}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.04565055, y: 0.0000009983778, z: -0.000002195011}
   m_ParentAnchorRotation: {x: 0.70675766, y: 0.044536255, z: -0.70099986, w: -0.08431698}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 0
-  m_SwingZ: 1
+  m_SwingY: 1
+  m_SwingZ: 0
   m_Twist: 1
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -135
-    upperLimit: -45
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &1745144140663031557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,13 +1614,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745144140663031557}
-  serializedVersion: 2
   m_LocalRotation: {x: 4.1633363e-17, y: -5.551115e-17, z: 3.469447e-17, w: 1}
   m_LocalPosition: {x: -0.022, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5940869837203026023}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1923393082007001638
 GameObject:
@@ -1881,7 +1648,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923393082007001638}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0034774565, y: -0.029179456, z: 0.025028542, w: 0.99925476}
   m_LocalPosition: {x: 0.026573397, y: 4.440892e-18, z: -4.440892e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1889,6 +1655,7 @@ Transform:
   m_Children:
   - {fileID: 4476245987003169507}
   m_Father: {fileID: 1486218171843020050}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &195843366411490651
 MonoBehaviour:
@@ -1905,7 +1672,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5837474237313359707}
   - {fileID: 735044825105476822}
@@ -1923,19 +1689,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923393082007001638}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.021499986
+  m_Radius: 0.008
+  m_Height: 0.03224998
   m_Direction: 0
   m_Center: {x: 0.010749993, y: 0, z: 0}
 --- !u!171741748 &4861079523966506276
@@ -1946,8 +1703,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923393082007001638}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.026573401, y: 8.412826e-10, z: 0.00000000239379}
   m_ParentAnchorRotation: {x: -0.020156786, y: 0.6859469, z: 0.015238922, w: 0.72721285}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1964,11 +1721,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -1977,7 +1733,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -1986,24 +1741,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &2145063317714797118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +1773,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145063317714797118}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.08350578, y: -0.065015696, z: 0.058274068, w: 0.9926751}
   m_LocalPosition: {x: -0.03379309, y: -1.3322676e-17, z: 3.4416914e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2038,6 +1780,7 @@ Transform:
   m_Children:
   - {fileID: 3350254830837579528}
   m_Father: {fileID: 8483544835501732105}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5384108982394705036
 MonoBehaviour:
@@ -2054,7 +1797,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6561881721632686009}
   - {fileID: 338433835512914978}
@@ -2073,19 +1815,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145063317714797118}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.024199998
+  m_Radius: 0.008
+  m_Height: 0.036299996
   m_Direction: 0
   m_Center: {x: -0.012099999, y: 0, z: 0}
 --- !u!171741748 &7424469145010178043
@@ -2096,8 +1829,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145063317714797118}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.0337931, y: -0.0000000015133992, z: 0.0000000013969839}
   m_ParentAnchorRotation: {x: 0.7479004, y: 0.10025345, z: -0.6559543, w: -0.01784147}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -2113,12 +1846,11 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 150000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -2127,7 +1859,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -2136,24 +1867,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &2249611865681979154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,7 +1897,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2249611865681979154}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2187,6 +1905,7 @@ Transform:
   - {fileID: 7047915552516660159}
   - {fileID: 4318760704030586530}
   m_Father: {fileID: 1767347335944194892}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5877349236301440554
 Animator:
@@ -2235,7 +1954,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276028368458380215}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.011228237, y: 0.00437888, z: 0.0019782642, w: 0.99992543}
   m_LocalPosition: {x: -0.04292699, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2243,6 +1961,7 @@ Transform:
   m_Children:
   - {fileID: 7086757620490062597}
   m_Father: {fileID: 1719684649603329394}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7580051153680021255
 MonoBehaviour:
@@ -2259,7 +1978,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 3455068672581190300}
   - {fileID: 2339149564054534472}
@@ -2277,19 +1995,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276028368458380215}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.02754959
+  m_Radius: 0.008
+  m_Height: 0.041324385
   m_Direction: 0
   m_Center: {x: -0.013774795, y: 0, z: 0}
 --- !u!171741748 &281167097853113612
@@ -2300,8 +2009,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276028368458380215}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.04292699, y: -4.3655746e-11, z: -4.0017767e-10}
   m_ParentAnchorRotation: {x: 0.7039577, y: -0.00654075, z: -0.71015036, w: 0.009338438}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -2318,11 +2027,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -2331,7 +2039,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -2340,24 +2047,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &2382514778237599167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,13 +2076,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2382514778237599167}
-  serializedVersion: 2
   m_LocalRotation: {x: 2.0816682e-17, y: -1.3877788e-17, z: -1.7347235e-17, w: 1}
   m_LocalPosition: {x: 0.0216, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5354503947861528459}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2567395398747859212
 GameObject:
@@ -2412,13 +2107,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2567395398747859212}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0242, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 341103343165947399}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2654182198771227669
 GameObject:
@@ -2446,7 +2141,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2654182198771227669}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
   m_LocalPosition: {x: -0.020069301, y: 0.011554099, z: -0.0104965195}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2454,6 +2148,7 @@ Transform:
   m_Children:
   - {fileID: 815765340106528948}
   m_Father: {fileID: 8989564037657637972}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7553764191543912889
 MonoBehaviour:
@@ -2470,7 +2165,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
@@ -2489,19 +2183,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2654182198771227669}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.02485256
+  m_Radius: 0.008
+  m_Height: 0.037278842
   m_Direction: 0
   m_Center: {x: -0.01242628, y: 0, z: 0}
 --- !u!171741748 &2448094586303991493
@@ -2512,64 +2197,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2654182198771227669}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.020069301, y: 0.011554099, z: -0.0104965195}
   m_ParentAnchorRotation: {x: 0.8827864, y: 0.27093908, z: -0.28233385, w: -0.25993812}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 0
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
   m_SwingY: 1
   m_SwingZ: 0
-  m_Twist: 1
+  m_Twist: 0
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    stiffness: 300
+    damping: 50
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 10000
+    damping: 50
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &2725302241727748729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2267,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2725302241727748729}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
   m_LocalPosition: {x: -0.09599624, y: 0.0073164543, z: -0.02355068}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2604,6 +2274,7 @@ Transform:
   m_Children:
   - {fileID: 2060784944251083728}
   m_Father: {fileID: 8989564037657637972}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823607433949876686
 MonoBehaviour:
@@ -2620,7 +2291,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
@@ -2638,19 +2308,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2725302241727748729}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.037927303
+  m_Radius: 0.008
+  m_Height: 0.056890957
   m_Direction: 0
   m_Center: {x: -0.018963652, y: 0, z: 0}
 --- !u!171741748 &1649435355752550742
@@ -2661,8 +2322,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2725302241727748729}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.09599624, y: 0.0073164543, z: -0.02355068}
   m_ParentAnchorRotation: {x: 0.6926521, y: -0.00890841, z: -0.7193179, w: -0.05230079}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -2678,47 +2339,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &2790049353945588970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,7 +2392,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2790049353945588970}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.025852412, y: 0.0071160584, z: -0.0032929415, w: 0.99963504}
   m_LocalPosition: {x: -0.0379273, y: -2.220446e-18, z: -8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2753,6 +2399,7 @@ Transform:
   m_Children:
   - {fileID: 6698960103694156464}
   m_Father: {fileID: 2017086322083567282}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7433389324193056591
 MonoBehaviour:
@@ -2769,7 +2416,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1823607433949876686}
   - {fileID: 2339149564054534472}
@@ -2787,19 +2433,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2790049353945588970}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.024303649
+  m_Radius: 0.008
+  m_Height: 0.036455475
   m_Direction: 0
   m_Center: {x: -0.012151824, y: 0, z: 0}
 --- !u!171741748 &5218945945214448479
@@ -2810,8 +2447,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2790049353945588970}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.037927303, y: -4.947651e-10, z: -5.966285e-10}
   m_ParentAnchorRotation: {x: 0.7018169, y: -0.020608908, z: -0.71188056, w: 0.015951987}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -2828,11 +2465,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -2841,7 +2477,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -2850,24 +2485,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &3209124367080213217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,7 +2515,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3209124367080213217}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2900,6 +2522,7 @@ Transform:
   m_Children:
   - {fileID: 8618204616760674993}
   m_Father: {fileID: 4554605582134174849}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3282655889677945777
 MonoBehaviour:
@@ -2917,13 +2540,11 @@ MonoBehaviour:
   m_handVisual: {fileID: 0}
   m_fingerDrive:
     thumb:
-      stiffness: 100000
-      damping: 10000
-      driveType: 0
+      stiffness: 150000
+      damping: 500
     others:
       stiffness: 100000
-      damping: 10000
-      driveType: 0
+      damping: 500
   m_wristRoot:
     m_master: {fileID: 0}
     m_slave: {fileID: 8557852169553853907}
@@ -2988,7 +2609,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359143450167039325}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00064476096, y: -0.04917067, z: 0.024018826, w: 0.99850136}
   m_LocalPosition: {x: -0.020311384, y: 6.661338e-18, z: -8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2996,6 +2616,7 @@ Transform:
   m_Children:
   - {fileID: 4691438768403048576}
   m_Father: {fileID: 9214166410039594932}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2010136890051439941
 MonoBehaviour:
@@ -3012,7 +2633,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 367995579719139305}
   - {fileID: 7370805459657717025}
@@ -3031,19 +2651,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359143450167039325}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.020599999
+  m_Radius: 0.008
+  m_Height: 0.030899998
   m_Direction: 0
   m_Center: {x: -0.010299999, y: 0, z: 0}
 --- !u!171741748 &4301130132606859077
@@ -3054,8 +2665,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359143450167039325}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.020311382, y: 0.000000001717126, z: -0.0000000034087861}
   m_ParentAnchorRotation: {x: 0.740816, y: 0.01743976, z: -0.6712781, w: 0.016527984}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3072,11 +2683,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -3085,7 +2695,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -3094,24 +2703,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &3364508019427520634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +2735,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3364508019427520634}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0034774544, y: -0.029179465, z: 0.02502854, w: 0.99925476}
   m_LocalPosition: {x: -0.026573397, y: -4.440892e-18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3146,6 +2742,7 @@ Transform:
   m_Children:
   - {fileID: 1600762907174336188}
   m_Father: {fileID: 2716302260022212835}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2942692379921417120
 MonoBehaviour:
@@ -3162,7 +2759,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1679085717629603440}
   - {fileID: 5800653354168258396}
@@ -3180,19 +2776,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3364508019427520634}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.021999985
+  m_Radius: 0.008
+  m_Height: 0.032999977
   m_Direction: 0
   m_Center: {x: -0.0109999925, y: 0, z: 0}
 --- !u!171741748 &2915689185440099850
@@ -3203,8 +2790,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3364508019427520634}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.026573401, y: -0.0000000011323209, z: -0.0000000029758667}
   m_ParentAnchorRotation: {x: 0.72721285, y: 0.0152388895, z: -0.6859469, w: 0.020156814}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3221,11 +2808,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -3234,7 +2820,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -3243,24 +2828,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &3415939080354553774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,13 +2859,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3415939080354553774}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8618204616760674993}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1192671888910319699
 SkinnedMeshRenderer:
@@ -3407,13 +2980,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3491620415429595497}
-  serializedVersion: 2
   m_LocalRotation: {x: -2.7755576e-17, y: 1.3877788e-16, z: 6.938894e-18, w: 1}
   m_LocalPosition: {x: -0.0206, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7077747365678687262}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3893370801468937135
 GameObject:
@@ -3441,7 +3014,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893370801468937135}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
   m_LocalPosition: {x: -0.095646605, y: 0.0025431546, z: -0.0017259055}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3449,6 +3021,7 @@ Transform:
   m_Children:
   - {fileID: 468336682674233538}
   m_Father: {fileID: 8989564037657637972}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3455068672581190300
 MonoBehaviour:
@@ -3465,7 +3038,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
@@ -3483,19 +3055,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893370801468937135}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.042926993
+  m_Radius: 0.008
+  m_Height: 0.06439049
   m_Direction: 0
   m_Center: {x: -0.021463497, y: 0, z: 0}
 --- !u!171741748 &8147820170437011504
@@ -3506,8 +3069,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893370801468937135}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.095646605, y: 0.0025431546, z: -0.0017259055}
   m_ParentAnchorRotation: {x: 0.668797, y: -0.0430643, z: -0.74158037, w: -0.030242518}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3523,47 +3086,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &3941811548662206624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,7 +3139,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3941811548662206624}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0006447509, y: -0.049170654, z: 0.024018826, w: 0.99850136}
   m_LocalPosition: {x: 0.020311384, y: -6.661338e-18, z: 1.7763568e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3598,6 +3146,7 @@ Transform:
   m_Children:
   - {fileID: 4174528596846748465}
   m_Father: {fileID: 1975826968142492581}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2735206772878504479
 MonoBehaviour:
@@ -3614,7 +3163,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5940520415921231642}
   - {fileID: 2793183392547521003}
@@ -3633,19 +3181,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3941811548662206624}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.021300001
+  m_Radius: 0.008
+  m_Height: 0.03195
   m_Direction: 0
   m_Center: {x: 0.010650001, y: 0, z: 0}
 --- !u!171741748 &668579914419547181
@@ -3656,8 +3195,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3941811548662206624}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.020311382, y: -0.000000001717126, z: 0.0000000029467628}
   m_ParentAnchorRotation: {x: -0.01652796, y: 0.6712782, z: 0.017439796, w: 0.74081594}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3674,11 +3213,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -3687,7 +3225,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -3696,24 +3233,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &4008880435464128764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,13 +3262,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4008880435464128764}
-  serializedVersion: 2
   m_LocalRotation: {x: 4.1633363e-17, y: -5.551115e-17, z: 3.469447e-17, w: 1}
   m_LocalPosition: {x: 0.0215, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6874666712470958298}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4077928673932088460
 GameObject:
@@ -3768,13 +3293,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077928673932088460}
-  serializedVersion: 2
   m_LocalRotation: {x: 2.0816682e-17, y: -1.3877788e-17, z: -1.7347235e-17, w: 1}
   m_LocalPosition: {x: -0.022, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7086757620490062597}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4343128314470203982
 GameObject:
@@ -3799,13 +3324,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4343128314470203982}
-  serializedVersion: 2
   m_LocalRotation: {x: -1.3877788e-17, y: -1.8388069e-16, z: -2.4980018e-16, w: 1}
   m_LocalPosition: {x: 0.0238, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 267563776460787563}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4415353300455173192
 GameObject:
@@ -3833,7 +3358,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415353300455173192}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.016056001, y: 0.02714872, z: 0.072033994, w: 0.99690336}
   m_LocalPosition: {x: 0.024303643, y: -5.2735593e-18, z: -8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3841,6 +3365,7 @@ Transform:
   m_Children:
   - {fileID: 8434141995450319594}
   m_Father: {fileID: 6819985428227609783}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7438898126344597037
 MonoBehaviour:
@@ -3857,7 +3382,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 4472352950918514440}
   - {fileID: 4079284056487749789}
@@ -3875,19 +3399,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415353300455173192}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.019699993
+  m_Radius: 0.008
+  m_Height: 0.02954999
   m_Direction: 0
   m_Center: {x: 0.009849996, y: 0, z: 0}
 --- !u!171741748 &4777509891966093596
@@ -3898,8 +3413,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415353300455173192}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.024303658, y: 0.0000000014752004, z: 0.0000000016070771}
   m_ParentAnchorRotation: {x: -0.062289026, y: 0.72411424, z: 0.039582413, w: 0.68572015}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -3916,11 +3431,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -3929,7 +3443,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -3938,24 +3451,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5111211672546852575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,13 +3480,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5111211672546852575}
-  serializedVersion: 2
   m_LocalRotation: {x: -2.7755576e-17, y: 1.3877788e-16, z: 6.938894e-18, w: 1}
   m_LocalPosition: {x: 0.0213, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7488400209426460435}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5289415575311138070
 GameObject:
@@ -4013,7 +3514,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5289415575311138070}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.083505884, y: -0.06501573, z: 0.058274075, w: 0.9926751}
   m_LocalPosition: {x: 0.03379309, y: 1.3322676e-17, z: -1.6653344e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4021,6 +3521,7 @@ Transform:
   m_Children:
   - {fileID: 1332327037654846888}
   m_Father: {fileID: 8485050206537816982}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4403989418619582898
 MonoBehaviour:
@@ -4037,7 +3538,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8673723771604823922}
   - {fileID: 6428544702767765156}
@@ -4056,19 +3556,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5289415575311138070}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.023800014
+  m_Radius: 0.008
+  m_Height: 0.03570002
   m_Direction: 0
   m_Center: {x: 0.011900007, y: 0, z: 0}
 --- !u!171741748 &3728956299455932678
@@ -4079,8 +3570,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5289415575311138070}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.033793084, y: 5.820766e-11, z: 0.0000000013969839}
   m_ParentAnchorRotation: {x: 0.017841514, y: 0.6559545, z: 0.10025352, w: 0.7479005}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4096,12 +3587,11 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 150000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -4110,7 +3600,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -4119,24 +3608,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5518151769258902519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,7 +3640,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5518151769258902519}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.037616648, y: 0.042937703, z: 0.013286048, w: 0.99828094}
   m_LocalPosition: {x: 0.030720409, y: 1.110223e-18, z: -3.7747583e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4171,6 +3647,7 @@ Transform:
   m_Children:
   - {fileID: 7488400209426460435}
   m_Father: {fileID: 5132022630861560706}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5940520415921231642
 MonoBehaviour:
@@ -4187,7 +3664,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2793183392547521003}
   - {fileID: 1294452288334566938}
@@ -4206,19 +3682,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5518151769258902519}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.020311393
+  m_Radius: 0.008
+  m_Height: 0.03046709
   m_Direction: 0
   m_Center: {x: 0.010155696, y: 0, z: 0}
 --- !u!171741748 &2069323451330982869
@@ -4229,8 +3696,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5518151769258902519}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.030720403, y: 1.4551915e-11, z: -0.0000000024738256}
   m_ParentAnchorRotation: {x: -0.035993647, y: 0.73625284, z: -0.01720434, w: 0.6755298}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4247,11 +3714,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -4260,7 +3726,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -4269,24 +3734,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5665946634087288956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +3766,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5665946634087288956}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.09111303, y: -0.004071365, z: -0.028129224, w: 0.9954349}
   m_LocalPosition: {x: 0.04565054, y: -0.0000009982332, z: 0.0000021940255}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4321,6 +3773,7 @@ Transform:
   m_Children:
   - {fileID: 1975826968142492581}
   m_Father: {fileID: 368447901167695984}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2793183392547521003
 MonoBehaviour:
@@ -4337,7 +3790,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 1294452288334566938}
   - {fileID: 8557852169553853907}
@@ -4356,19 +3808,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5665946634087288956}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.0307204
+  m_Radius: 0.008
+  m_Height: 0.0460806
   m_Direction: 0
   m_Center: {x: 0.0153602, y: 0, z: 0}
 --- !u!171741748 &6289555182635706622
@@ -4379,64 +3822,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5665946634087288956}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.04565055, y: -0.0000009983778, z: 0.000002195011}
   m_ParentAnchorRotation: {x: 0.084317, y: 0.70099986, z: 0.044536278, w: 0.70675766}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 0
-  m_SwingZ: 1
+  m_SwingY: 1
+  m_SwingZ: 0
   m_Twist: 1
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -135
-    upperLimit: -45
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -150
-    upperLimit: -90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5719033449967303465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,7 +3892,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5719033449967303465}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.26023024, y: -0.02433092, z: -0.12567802, w: 0.95702314}
   m_LocalPosition: {x: 0.024852559, y: 4.440892e-18, z: -1.1657341e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4471,6 +3899,7 @@ Transform:
   m_Children:
   - {fileID: 8485050206537816982}
   m_Father: {fileID: 7978912805255378362}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6428544702767765156
 MonoBehaviour:
@@ -4487,7 +3916,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2049900974719096052}
   - {fileID: 8557852169553853907}
@@ -4506,19 +3934,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5719033449967303465}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.03251291
+  m_Radius: 0.008
+  m_Height: 0.048769366
   m_Direction: 0
   m_Center: {x: 0.016256455, y: 0, z: 0}
 --- !u!171741748 &2337872615564533790
@@ -4529,38 +3948,36 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5719033449967303465}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.024852559, y: 0, z: -4.656613e-10}
   m_ParentAnchorRotation: {x: 0.27287835, y: 0.65951306, z: 0.09514276, w: 0.6939221}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
-  m_SwingY: 0
-  m_SwingZ: 1
+  m_SwingY: 1
+  m_SwingZ: 0
   m_Twist: 1
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 750000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -135
-    upperLimit: -45
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 750000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -4569,24 +3986,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5826946741895327557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,7 +4018,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826946741895327557}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.034319542, y: 0.0046118353, z: 0.09300701, w: 0.9950631}
   m_LocalPosition: {x: 0.027549583, y: 1.110223e-18, z: 8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4621,6 +4025,7 @@ Transform:
   m_Children:
   - {fileID: 8285816928547289563}
   m_Father: {fileID: 8593996075127959004}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1952722017590018613
 MonoBehaviour:
@@ -4637,7 +4042,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8401518232103763147}
   - {fileID: 2166164672110974101}
@@ -4655,19 +4059,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826946741895327557}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.02159999
+  m_Radius: 0.008
+  m_Height: 0.032399982
   m_Direction: 0
   m_Center: {x: 0.010799995, y: 0, z: 0}
 --- !u!171741748 &5988250320515000133
@@ -4678,8 +4073,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826946741895327557}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.027549593, y: 8.644747e-10, z: 0.0000000013085355}
   m_ParentAnchorRotation: {x: -0.09003348, y: 0.70687693, z: 0.04149831, w: 0.7003549}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4696,11 +4091,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -4709,7 +4103,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -4718,24 +4111,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &5929346597340591580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4762,7 +4143,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5929346597340591580}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.033632524, y: 0.0027898494, z: -0.005676029, w: 0.99941427}
   m_LocalPosition: {x: -0.0389961, y: 7.771561e-18, z: -8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4770,6 +4150,7 @@ Transform:
   m_Children:
   - {fileID: 5940869837203026023}
   m_Father: {fileID: 6648908048506172740}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1679085717629603440
 MonoBehaviour:
@@ -4786,7 +4167,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 5800653354168258396}
   - {fileID: 2339149564054534472}
@@ -4804,19 +4184,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5929346597340591580}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.026573407
+  m_Radius: 0.008
+  m_Height: 0.03986011
   m_Direction: 0
   m_Center: {x: -0.013286703, y: 0, z: 0}
 --- !u!171741748 &3982703039111661154
@@ -4827,8 +4198,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5929346597340591580}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.0389961, y: -3.4924597e-10, z: 6.4028427e-10}
   m_ParentAnchorRotation: {x: 0.7047199, y: -0.027795378, z: -0.7086654, w: 0.019768259}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4845,11 +4216,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -4858,7 +4228,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -4867,24 +4236,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &6660921036923401203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,7 +4268,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6660921036923401203}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.033632524, y: 0.0027898385, z: -0.005676023, w: 0.99941427}
   m_LocalPosition: {x: 0.0389961, y: -8.881784e-18, z: 8.881784e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4919,6 +4275,7 @@ Transform:
   m_Children:
   - {fileID: 6874666712470958298}
   m_Father: {fileID: 3073446711588218574}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5837474237313359707
 MonoBehaviour:
@@ -4935,7 +4292,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 735044825105476822}
   - {fileID: 8557852169553853907}
@@ -4953,19 +4309,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6660921036923401203}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.026573407
+  m_Radius: 0.008
+  m_Height: 0.03986011
   m_Direction: 0
   m_Center: {x: 0.013286703, y: 0, z: 0}
 --- !u!171741748 &8847086875599036562
@@ -4976,8 +4323,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6660921036923401203}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.0389961, y: 3.4924597e-10, z: -6.4028427e-10}
   m_ParentAnchorRotation: {x: -0.01976823, y: 0.7086654, z: -0.027795345, w: 0.7047199}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -4994,11 +4341,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -5007,7 +4353,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -5016,24 +4361,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &6715517858322308034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +4393,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6715517858322308034}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.011228235, y: 0.0043788743, z: 0.0019782674, w: 0.99992543}
   m_LocalPosition: {x: 0.04292699, y: -4.440892e-18, z: 4.440892e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5068,6 +4400,7 @@ Transform:
   m_Children:
   - {fileID: 5354503947861528459}
   m_Father: {fileID: 3476413328513738111}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8401518232103763147
 MonoBehaviour:
@@ -5084,7 +4417,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2166164672110974101}
   - {fileID: 8557852169553853907}
@@ -5102,19 +4434,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6715517858322308034}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.02754959
+  m_Radius: 0.008
+  m_Height: 0.041324385
   m_Direction: 0
   m_Center: {x: 0.013774795, y: 0, z: 0}
 --- !u!171741748 &2583948936138129299
@@ -5125,8 +4448,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6715517858322308034}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.04292699, y: -4.0745363e-10, z: 3.929017e-10}
   m_ParentAnchorRotation: {x: -0.009338408, y: 0.71015036, z: -0.0065407148, w: 0.7039577}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -5143,11 +4466,10 @@ ArticulationBody:
     lowerLimit: -10
     upperLimit: 90
     stiffness: 100000
-    damping: 10000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -5156,7 +4478,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -5165,24 +4486,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &6866554333019502204
 GameObject:
   m_ObjectHideFlags: 0
@@ -5206,13 +4515,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6866554333019502204}
-  serializedVersion: 2
   m_LocalRotation: {x: 5.2041704e-18, y: 1.3877788e-17, z: -1.7997756e-17, w: 1}
   m_LocalPosition: {x: 0.0197, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4006658955070136878}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7351939409669030856
 GameObject:
@@ -5240,7 +4549,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351939409669030856}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.20703599, y: 0.14034285, z: -0.0183118, w: 0.96804166}
   m_LocalPosition: {x: -0.034073558, y: 0.009419835, z: 0.022998573}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5248,6 +4556,7 @@ Transform:
   m_Children:
   - {fileID: 5195671102573511580}
   m_Father: {fileID: 8989564037657637972}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6604817682116920526
 MonoBehaviour:
@@ -5264,7 +4573,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 2339149564054534472}
   m_parent: {fileID: 8989564037657637972}
@@ -5283,19 +4591,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351939409669030856}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.04565055
+  m_Radius: 0.008
+  m_Height: 0.06847583
   m_Direction: 0
   m_Center: {x: -0.022825275, y: 0, z: 0}
 --- !u!171741748 &7846531855223505955
@@ -5306,64 +4605,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351939409669030856}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.034073558, y: 0.009419835, z: 0.022998573}
   m_ParentAnchorRotation: {x: 0.5852714, y: -0.15934497, z: -0.7837462, w: 0.13344818}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0.70710677, y: -0.00000003090862, z: -0.70710677, w: 0.00000003090862}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 0
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
   m_SwingY: 1
-  m_SwingZ: 0
-  m_Twist: 1
+  m_SwingZ: 1
+  m_Twist: 0
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    stiffness: 200
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -10
-    upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &7604588265359166568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +4674,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7604588265359166568}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5401,6 +4685,7 @@ Transform:
   - {fileID: 6648908048506172740}
   - {fileID: 1774079291687715982}
   m_Father: {fileID: 6612905654123733348}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2339149564054534472
 MonoBehaviour:
@@ -5415,9 +4700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_master: {fileID: 0}
-  m_maxLinearVelocity: 5
-  m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
+  m_maxLinearVelocity: 10
+  m_maxAngularVelocity: 100
   m_parentJoints: []
   m_parent: {fileID: 6612905654123733348}
   m_articulation: {fileID: 662496856572886642}
@@ -5449,8 +4733,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7604588265359166568}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 20
+  serializedVersion: 3
+  m_Mass: 0.3
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -5471,7 +4755,6 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -90
     upperLimit: 10
@@ -5480,7 +4763,6 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: 10
     upperLimit: 90
@@ -5489,24 +4771,12 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &7650959301124330211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,7 +4803,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7650959301124330211}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.37538692, y: -0.42458406, z: 0.007778856, w: 0.8238644}
   m_LocalPosition: {x: 0.020069301, y: -0.011554099, z: 0.0104965195}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5541,6 +4810,7 @@ Transform:
   m_Children:
   - {fileID: 2705992067945062389}
   m_Father: {fileID: 7047915552516660159}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2049900974719096052
 MonoBehaviour:
@@ -5557,7 +4827,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
@@ -5576,19 +4845,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7650959301124330211}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.02485256
+  m_Radius: 0.008
+  m_Height: 0.037278842
   m_Direction: 0
   m_Center: {x: 0.01242628, y: 0, z: 0}
 --- !u!171741748 &3000374731024367677
@@ -5599,64 +4859,50 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7650959301124330211}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.020069301, y: -0.011554099, z: 0.0104965195}
   m_ParentAnchorRotation: {x: 0.25993815, y: 0.28233385, z: 0.27093914, w: 0.8827864}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 3
+  m_ArticulationJointType: 0
   m_LinearX: 2
   m_LinearY: 2
   m_LinearZ: 2
   m_SwingY: 1
   m_SwingZ: 0
-  m_Twist: 1
+  m_Twist: 0
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    stiffness: 300
+    damping: 50
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 10000
+    damping: 50
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -150
-    upperLimit: -90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &8018082803890826535
 GameObject:
   m_ObjectHideFlags: 0
@@ -5683,7 +4929,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018082803890826535}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.03068309, y: 0.018855589, z: -0.043281443, w: 0.9984136}
   m_LocalPosition: {x: 0.09599624, y: -0.0073164543, z: 0.02355068}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5691,6 +4936,7 @@ Transform:
   m_Children:
   - {fileID: 6819985428227609783}
   m_Father: {fileID: 7047915552516660159}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4079284056487749789
 MonoBehaviour:
@@ -5707,7 +4953,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
@@ -5725,19 +4970,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018082803890826535}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.037927303
+  m_Radius: 0.008
+  m_Height: 0.056890957
   m_Direction: 0
   m_Center: {x: 0.018963652, y: 0, z: 0}
 --- !u!171741748 &5913427642031137091
@@ -5748,8 +4984,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018082803890826535}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.09599624, y: -0.0073164543, z: 0.02355068}
   m_ParentAnchorRotation: {x: 0.052300822, y: 0.7193179, z: -0.00890838, w: 0.6926521}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -5765,47 +5001,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -150
-    upperLimit: -90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &8102432633178079209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,7 +5054,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8102432633178079209}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.009066327, y: 0.05146559, z: -0.051835753, w: 0.99728745}
   m_LocalPosition: {x: 0.095646605, y: -0.0025431544, z: 0.0017259055}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5840,6 +5061,7 @@ Transform:
   m_Children:
   - {fileID: 8593996075127959004}
   m_Father: {fileID: 7047915552516660159}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2166164672110974101
 MonoBehaviour:
@@ -5856,7 +5078,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 8557852169553853907}
   m_parent: {fileID: 7047915552516660159}
@@ -5874,19 +5095,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8102432633178079209}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.042926993
+  m_Radius: 0.008
+  m_Height: 0.06439049
   m_Direction: 0
   m_Center: {x: 0.021463497, y: 0, z: 0}
 --- !u!171741748 &820801858548585325
@@ -5897,8 +5109,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8102432633178079209}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.095646605, y: -0.0025431544, z: 0.0017259055}
   m_ParentAnchorRotation: {x: 0.03024255, y: 0.74158037, z: -0.04306427, w: 0.668797}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -5914,47 +5126,33 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
-    lowerLimit: -10
-    upperLimit: 10
-    stiffness: 100000
-    damping: 10000
+    lowerLimit: -30
+    upperLimit: 30
+    stiffness: 500000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
-    lowerLimit: -150
-    upperLimit: -90
-    stiffness: 100000
-    damping: 10000
-    forceLimit: 0
+    lowerLimit: -45
+    upperLimit: 45
+    stiffness: 500000
+    damping: 500
+    forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &8360225275840292079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,7 +5179,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8360225275840292079}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.08270365, y: 0.07696168, z: 0.084062226, w: 0.99003565}
   m_LocalPosition: {x: -0.03251291, y: 1.7763568e-17, z: -2.6090241e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5989,6 +5186,7 @@ Transform:
   m_Children:
   - {fileID: 341103343165947399}
   m_Father: {fileID: 815765340106528948}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6561881721632686009
 MonoBehaviour:
@@ -6005,7 +5203,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 338433835512914978}
   - {fileID: 7553764191543912889}
@@ -6024,19 +5221,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8360225275840292079}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.033793095
+  m_Radius: 0.008
+  m_Height: 0.050689645
   m_Direction: 0
   m_Center: {x: -0.016896548, y: 0, z: 0}
 --- !u!171741748 &6745165971633081126
@@ -6047,8 +5235,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8360225275840292079}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: -0.03251291, y: -0.0000000044237822, z: 9.313226e-10}
   m_ParentAnchorRotation: {x: 0.6456409, y: 0.00096063316, z: -0.75448114, w: 0.11792134}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -6064,12 +5252,11 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 150000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -6078,7 +5265,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -10
     upperLimit: 90
@@ -6087,24 +5273,12 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
 --- !u!1 &8944220838237513196
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,7 +5305,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8944220838237513196}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.08270373, y: 0.0769617, z: 0.08406223, w: 0.99003565}
   m_LocalPosition: {x: 0.03251291, y: -4.440892e-18, z: 3.2196467e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -6139,6 +5312,7 @@ Transform:
   m_Children:
   - {fileID: 267563776460787563}
   m_Father: {fileID: 2705992067945062389}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8673723771604823922
 MonoBehaviour:
@@ -6155,7 +5329,6 @@ MonoBehaviour:
   m_master: {fileID: 0}
   m_maxLinearVelocity: 5
   m_maxAngularVelocity: 1.75
-  m_forceLimmit: 200
   m_parentJoints:
   - {fileID: 6428544702767765156}
   - {fileID: 2049900974719096052}
@@ -6174,19 +5347,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8944220838237513196}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.005
-  m_Height: 0.033793084
+  m_Radius: 0.008
+  m_Height: 0.050689626
   m_Direction: 0
   m_Center: {x: 0.016896542, y: 0, z: 0}
 --- !u!171741748 &7926404955344609114
@@ -6197,8 +5361,8 @@ ArticulationBody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8944220838237513196}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Mass: 1
+  serializedVersion: 3
+  m_Mass: 0.1
   m_ParentAnchorPosition: {x: 0.032512914, y: 0.0000000048894435, z: 0.0000000018626451}
   m_ParentAnchorRotation: {x: -0.11792131, y: 0.75448114, z: 0.00096065924, w: 0.6456409}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -6214,12 +5378,11 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -10
     upperLimit: 90
-    stiffness: 100000
-    damping: 10000
+    stiffness: 150000
+    damping: 500
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_YDrive:
     lowerLimit: -135
     upperLimit: -45
@@ -6228,7 +5391,6 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_ZDrive:
     lowerLimit: -150
     upperLimit: -90
@@ -6237,21 +5399,9 @@ ArticulationBody:
     forceLimit: 0
     target: 0
     targetVelocity: 0
-    driveType: 0
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 1
   m_JointFriction: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_Immovable: 0
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 3
