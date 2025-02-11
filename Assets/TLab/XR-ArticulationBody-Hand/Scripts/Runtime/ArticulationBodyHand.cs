@@ -29,8 +29,8 @@ namespace TLab.XR.ArticulationBodyHand
         [System.Serializable]
         public class SerializableArticulationDrive
         {
-            public float stiffness = 1e+5f;
-            public float damping = 500;
+            public float stiffness = 2 * 1e+5f;
+            public float damping = 1e+3f;
 #if UNITY_2022_3_OR_NEWER
             public ArticulationDriveType driveType = ArticulationDriveType.Force;
 #endif
