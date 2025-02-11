@@ -2,7 +2,7 @@
 
 Experimental project implementing ArticulationBody-based physical hands in meta-quest's unity-sdk.
 
-[demonstration video here](https://github.com/user-attachments/assets/81c15125-86b5-4db0-b68c-40c5bde9efba)
+[demonstration video here](https://github.com/user-attachments/assets/3e4e7c2d-7f6f-406a-9549-e259228419f2)
 
 ## Backgournd
 
